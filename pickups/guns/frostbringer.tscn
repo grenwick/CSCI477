@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6rl1arfg0pgp"]
+
+[ext_resource type="Script" path="res://pickups/guns/frostbringer.gd" id="1_ay6h7"]
+[ext_resource type="Texture2D" uid="uid://duileqid7vqts" path="res://pixel_sprites/object_sprites/guns/frostbringer.png" id="2_h2ux3"]
+[ext_resource type="PackedScene" uid="uid://58ciaxx02hnh" path="res://bullets/bullethole.tscn" id="2_vwao1"]
+[ext_resource type="ArrayMesh" uid="uid://dyid1mn1vfyny" path="res://pixel_sprites/object_sprites/guns/frostbringer.obj" id="3_2g1p0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqwsh"]
+albedo_texture = ExtResource("2_h2ux3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oeja3"]
+size = Vector3(1, 0.538574, 0.316345)
+
+[node name="Frostbringer" type="RigidBody3D"]
+collision_layer = 2
+script = ExtResource("1_ay6h7")
+bullethole = ExtResource("2_vwao1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_sqwsh")
+mesh = ExtResource("3_2g1p0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.230713, -0.0645447)
+shape = SubResource("BoxShape3D_oeja3")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51689, 0.329359, 0)

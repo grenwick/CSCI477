@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://w6o3nuravyu0"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_w2ldp"]
+[ext_resource type="PackedScene" uid="uid://b6rl1arfg0pgp" path="res://pickups/guns/frostbringer.tscn" id="2_7w37v"]
+[ext_resource type="PackedScene" uid="uid://bfoscphlq5pqx" path="res://pickups/guns/revolver.tscn" id="3_4275c"]
+[ext_resource type="PackedScene" uid="uid://bx4ltgm8uw1k8" path="res://pickups/guns/lyre.tscn" id="4_ppefy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ngj4o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0o1h6"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975496, 0)
+script = ExtResource("1_w2ldp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ngj4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0o1h6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.35)
+current = true
+
+[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRay" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd" type="Node3D" parent="Camera3D/ShootRay"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+
+[node name="ShootRay2" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.997404, 0.0495289, 0.0522642, -0.0522642, 0.997261, 0.052336, -0.0495289, -0.0549317, 0.997261, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd2" type="Node3D" parent="Camera3D/ShootRay2"]
+transform = Transform3D(0.997405, -0.0522643, -0.049529, 0.0495289, 0.997261, -0.0549318, 0.0522642, 0.052336, 0.997261, -0.203677, 0.0819709, -99.4142)
+
+[node name="ShootRay3" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.99863, -0.00273905, -0.0522642, 0, 0.99863, -0.052336, 0.052336, 0.0522642, 0.997261, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd3" type="Node3D" parent="Camera3D/ShootRay3"]
+transform = Transform3D(0.998629, 3.42866e-09, 0.0523358, -0.00273906, 0.998629, 0.0522642, -0.0522643, -0.0523358, 0.99726, 0.00643907, -0.000713587, -99.6187)
+
+[node name="ShootRay4" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.9992, -0.0302587, -0.026152, 0.0313809, 0.998555, 0.0436194, 0.0247944, -0.0444052, 0.998706, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd4" type="Node3D" parent="Camera3D/ShootRay4"]
+transform = Transform3D(0.9992, 0.031381, 0.0247944, -0.0302588, 0.998558, -0.0444052, -0.0261521, 0.0436195, 0.998706, 0.0523577, -0.0406885, -100.057)
+
+[node name="ShootRay5" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.999712, -0.00781384, 0.0226691, 0.0087195, 0.999156, -0.0401318, -0.0223363, 0.0403179, 0.998937, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd5" type="Node3D" parent="Camera3D/ShootRay5"]
+transform = Transform3D(0.999713, 0.00871952, -0.0223364, -0.00781384, 0.999157, 0.040318, 0.022669, -0.0401318, 0.998937, -0.639924, -0.20154, -99.5637)
+
+[node name="ShootRay6" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.99863, 0.000913388, -0.052328, 0, 0.999848, 0.0174524, 0.052336, -0.0174285, 0.998477, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd6" type="Node3D" parent="Camera3D/ShootRay6"]
+transform = Transform3D(0.998629, 2.3499e-09, 0.052336, 0.000913388, 0.999846, -0.0174285, -0.052328, 0.0174524, 0.998477, -0.489042, -0.149913, -99.7805)
+
+[node name="ShootRay7" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(0.997564, 0.00121742, 0.0697458, 0, 0.999848, -0.0174524, -0.0697565, 0.0174099, 0.997412, 0, 0, -0.306371)
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="ShootRayEnd7" type="Node3D" parent="Camera3D/ShootRay7"]
+transform = Transform3D(0.997564, -1.76031e-09, -0.0697564, 0.00121742, 0.999847, 0.0174099, 0.0697459, -0.0174524, 0.997411, 0.316015, -0.547346, -99.8645)
+
+[node name="Gun" type="Node3D" parent="Camera3D"]
+
+[node name="Frostbringer" parent="Camera3D/Gun" instance=ExtResource("2_7w37v")]
+transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, 0.3, -0.541, -0.5)
+visible = false
+collision_layer = 128
+collision_mask = 0
+gravity_scale = 0.0
+freeze = true
+
+[node name="Revolver" parent="Camera3D/Gun" instance=ExtResource("3_4275c")]
+transform = Transform3D(0.0588708, 0, -0.998266, 0, 1, 0, 0.998266, 0, 0.0588708, 0.3, -0.5, -0.648)
+visible = false
+collision_layer = 128
+collision_mask = 0
+gravity_scale = 0.0
+freeze = true
+
+[node name="Lyre" parent="Camera3D/Gun" instance=ExtResource("4_ppefy")]
+transform = Transform3D(0.230768, -0.053277, -0.971549, 0.224951, 0.97437, 0, 0.946648, -0.218551, 0.236838, 0.3, -0.6, -0.348)
+visible = false
+collision_layer = 128
+collision_mask = 0
+gravity_scale = 0.0
+freeze = true

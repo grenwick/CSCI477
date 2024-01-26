@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://58ciaxx02hnh"]
+
+[ext_resource type="Texture2D" uid="uid://bdknsji4lw07x" path="res://bullets/assets/hole-difuse.png" id="1_i5bcl"]
+[ext_resource type="Texture2D" uid="uid://byc6edrbpdfog" path="res://bullets/assets/hole-normal.png" id="2_fy2c5"]
+[ext_resource type="Script" path="res://bullets/bullethole.gd" id="3_di0ge"]
+
+[node name="Bullethole" type="Decal"]
+size = Vector3(0.16, 0.16, 0.16)
+texture_albedo = ExtResource("1_i5bcl")
+texture_normal = ExtResource("2_fy2c5")
+script = ExtResource("3_di0ge")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

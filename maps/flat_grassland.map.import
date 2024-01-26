@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://dmfe661srgemy"
+path="res://.godot/imported/flat_grassland.map-f5f2222b25af724d0b4f7f3e3686b1c8.tres"
+
+[deps]
+
+source_file="res://maps/flat_grassland.map"
+dest_files=["res://.godot/imported/flat_grassland.map-f5f2222b25af724d0b4f7f3e3686b1c8.tres"]
+
+[params]
+

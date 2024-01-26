@@ -1,0 +1,17 @@
+// Game: Qodot
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+"_tb_textures" "textures/TexturePack1;textures/TexturePack1/256x256;textures/TexturePack1/256x256/Bricks;textures/TexturePack1/256x256/Grass;textures/TexturePack1/256x256/Roofs;textures/TexturePack1/256x256/Tile;textures/TexturePack1/256x256/Wood;textures/TexturePack2;textures/TexturePack2/256x256;textures/TexturePack2/256x256/Brick;textures/TexturePack2/256x256/Dirt;textures/TexturePack2/256x256/Elements;textures/TexturePack2/256x256/Metal;textures/TexturePack2/256x256/Plaster;textures/TexturePack2/256x256/Stone;textures/TexturePack2/256x256/Tile;textures/TexturePack2/256x256/Wood;textures/TexturePack3;textures/TexturePack3/256x256;textures/TexturePack3/256x256/Animal;textures/TexturePack3/256x256/Box;textures/TexturePack3/256x256/Cloth;textures/TexturePack3/256x256/Elements;textures/TexturePack3/256x256/Gem;textures/TexturePack3/256x256/Grating;textures/TexturePack3/256x256/Metal;textures/TexturePack3/256x256/Stone;textures/TexturePack3/256x256/Terrain;textures/TexturePack3/256x256/Weave"
+// brush 0
+{
+( -640 -640 -16 ) ( -640 -630 -16 ) ( -640 -640 -15 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ 0 -0.1 0 0 ] [ 0 0 -1 0 ] 0 0.01 0.01
+( -640 -640 -16 ) ( -640 -640 -15 ) ( -630 -640 -16 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ 0.1 0 0 0 ] [ 0 0 -1 0 ] 0 0.01 0.01
+( -640 -640 -16 ) ( -630 -640 -16 ) ( -640 -630 -16 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ -0.1 0 0 0 ] [ 0 -0.1 0 0 ] 0 0.01 0.01
+( 640 640 16 ) ( 640 650 16 ) ( 650 640 16 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ 0.1 0 0 0 ] [ 0 -0.1 0 0 ] 0 0.01 0.01
+( 640 640 16 ) ( 650 640 16 ) ( 640 640 17 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ -0.1 0 0 0 ] [ 0 0 -1 0 ] 0 0.01 0.01
+( 640 640 16 ) ( 640 640 17 ) ( 640 650 16 ) TexturePack1/256x256/Grass/Grass_19-256x256 [ 0 0.1 0 0 ] [ 0 0 -1 0 ] 0 0.01 0.01
+}
+}

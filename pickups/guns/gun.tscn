@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4afipmb0awg"]
+
+[ext_resource type="Script" path="res://pickups/guns/gun.gd" id="1_lgbg8"]
+[ext_resource type="PackedScene" uid="uid://58ciaxx02hnh" path="res://bullets/bullethole.tscn" id="2_acsix"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_lgbg8")
+bullethole = ExtResource("2_acsix")
