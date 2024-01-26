@@ -1236,6 +1236,7 @@ environment = SubResource("Environment_d636n")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.778528, 0.62761, 0, -0.62761, 0.778528, 0, 10.9099, 14.9932)
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_ckka1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44919, 19.066)
