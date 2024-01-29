@@ -28,6 +28,6 @@ func _on_spawn_timer_timeout():
 		zombie_instance.position = spawn_point
 		navigation_region.add_child(zombie_instance)
 		
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	
 	

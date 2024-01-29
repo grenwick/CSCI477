@@ -29,8 +29,8 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 			#make bullet trail, either it collides with object, or shoot it into space
 			instance = bullet_trail.instantiate()
 			if shot_spread[increment].is_colliding():
-				if is_instance_of(shot_spread[increment].get_collider(), Enemy):
-					shot_spread[increment].get_collider().hit_gun()
+				if shot_spread[increment].get_collider().is_in_group("enemy"):
+					shot_spread[increment].get_collider().hit(20)
 				instance.init(gun_barrel.global_position, shot_spread[increment].get_collision_point())
 			else:
 				instance.init(gun_barrel.global_position, shot_trails[increment].global_position)
@@ -47,11 +47,10 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 		#make bullet trail, either it collides with object, or shoot it into space
 		instance = bullet_trail.instantiate()
 		if shot_spread[0].is_colliding():
-			if is_instance_of(shot_spread[0].get_collider(), Enemy):
-				shot_spread[0].get_collider().hit_gun()
+			if shot_spread[0].get_collider().is_in_group("enemy"):
+					shot_spread[0].get_collider().hit(20)
 			instance.init(gun_barrel.global_position, shot_spread[0].get_collision_point())
 		else:
-			
 			instance.init(gun_barrel.global_position, shot_trails[0].global_position)
 		get_parent().add_child(instance)
 		bulletInst.global_transform.origin = shot_spread[0].get_collision_point() as Vector3
@@ -64,11 +63,10 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 		#make bullet trail, either it collides with object, or shoot it into space
 		instance = bullet_trail.instantiate()
 		if shot_spread[0].is_colliding():
-			if is_instance_of(shot_spread[0].get_collider(), Enemy):
-				shot_spread[0].get_collider().hit_gun()
+			if shot_spread[0].get_collider().is_in_group("enemy"):
+				shot_spread[0].get_collider().hit(20)
 			instance.init(gun_barrel.global_position, shot_spread[0].get_collision_point())
 		else:
-			
 			instance.init(gun_barrel.global_position, shot_trails[0].global_position)
 		get_parent().add_child(instance)
 		bulletInst.global_transform.origin = shot_spread[0].get_collision_point() as Vector3

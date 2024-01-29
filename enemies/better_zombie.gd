@@ -3,6 +3,9 @@ extends Enemy
 var player = null
 var state_machine
 
+const SPEED = 4.0
+const MAX_HEALTH = 100
+
 const ATTACK_RANGE = 2.5
 
 @export var player_path := "/root/Level/Player"
@@ -12,8 +15,6 @@ const ATTACK_RANGE = 2.5
 
 func _ready():
 	set_physics_process(false)
-	SPEED = 4.0
-	MAX_HEALTH = 100
 	current_health = MAX_HEALTH
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
@@ -30,8 +31,9 @@ func _process(delta):
 			nav_agent.set_target_position(player.global_transform.origin)
 			var next_nav_point = nav_agent.get_next_path_position()
 			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
-			if !global_transform.origin.is_equal_approx(velocity / SPEED):
-				look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
+			var target_vector = Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z)
+			if !global_transform.origin.is_equal_approx(target_vector):
+				look_at(target_vector, Vector3.UP)
 		"attack":
 			#look at player
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
@@ -53,4 +55,5 @@ func _process(delta):
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 
-
+func _on_area_3d_body_part_hit(damage):
+	current_health -= damage

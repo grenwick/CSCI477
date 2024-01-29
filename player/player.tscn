@@ -31,7 +31,7 @@ collide_with_areas = true
 [node name="ShootRay" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd" type="Node3D" parent="Camera3D/ShootRay"]
@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
 [node name="ShootRay2" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.997404, 0.0495289, 0.0522642, -0.0522642, 0.997261, 0.052336, -0.0495289, -0.0549317, 0.997261, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd2" type="Node3D" parent="Camera3D/ShootRay2"]
@@ -49,7 +49,7 @@ transform = Transform3D(0.997405, -0.0522643, -0.049529, 0.0495289, 0.997261, -0
 [node name="ShootRay3" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.99863, -0.00273905, -0.0522642, 0, 0.99863, -0.052336, 0.052336, 0.0522642, 0.997261, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd3" type="Node3D" parent="Camera3D/ShootRay3"]
@@ -58,7 +58,7 @@ transform = Transform3D(0.998629, 3.42866e-09, 0.0523358, -0.00273906, 0.998629,
 [node name="ShootRay4" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.9992, -0.0302587, -0.026152, 0.0313809, 0.998555, 0.0436194, 0.0247944, -0.0444052, 0.998706, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd4" type="Node3D" parent="Camera3D/ShootRay4"]
@@ -67,7 +67,7 @@ transform = Transform3D(0.9992, 0.031381, 0.0247944, -0.0302588, 0.998558, -0.04
 [node name="ShootRay5" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.999712, -0.00781384, 0.0226691, 0.0087195, 0.999156, -0.0401318, -0.0223363, 0.0403179, 0.998937, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd5" type="Node3D" parent="Camera3D/ShootRay5"]
@@ -76,7 +76,7 @@ transform = Transform3D(0.999713, 0.00871952, -0.0223364, -0.00781384, 0.999157,
 [node name="ShootRay6" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.99863, 0.000913388, -0.052328, 0, 0.999848, 0.0174524, 0.052336, -0.0174285, 0.998477, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd6" type="Node3D" parent="Camera3D/ShootRay6"]
@@ -85,7 +85,7 @@ transform = Transform3D(0.998629, 2.3499e-09, 0.052336, 0.000913388, 0.999846, -
 [node name="ShootRay7" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.997564, 0.00121742, 0.0697458, 0, 0.999848, -0.0174524, -0.0697565, 0.0174099, 0.997412, 0, 0, -0.306371)
 target_position = Vector3(0, 0, -100)
-collision_mask = 3
+collision_mask = 2
 collide_with_areas = true
 
 [node name="ShootRayEnd7" type="Node3D" parent="Camera3D/ShootRay7"]
