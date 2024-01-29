@@ -1,22 +1,28 @@
-extends CharacterBody3D
+extends Enemy
 
 var player = null
 var state_machine
 
-const SPEED = 4.0
 const ATTACK_RANGE = 2.5
+
+
+
 
 @export var player_path : NodePath
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
 func _ready():
+	SPEED = 4.0
+	MAX_HEALTH = 100
+	current_health = MAX_HEALTH
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
 	
 func _process(delta):
 	velocity = Vector3.ZERO
-	
+	if !check_live():
+		queue_free()
 	
 	match state_machine.get_current_node():
 		"crawl":

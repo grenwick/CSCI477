@@ -1268,5 +1268,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75367, 7.01944, 13.7105)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3842, 2.73111, 10.9554)
 
 [node name="better_zombie" parent="." instance=ExtResource("12_tdy6v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46732, 1.78294, 0)
 player_path = NodePath("../Player")
