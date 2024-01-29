@@ -1261,7 +1261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8353, 1.71835, 10.0078)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2678, 2.0032, 15.1295)
 
 [node name="Spawnpoint5" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.372, 2.18926, 12.4264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8479, 2.15941, 13.9296)
 
 [node name="Spawnpoint6" type="Node3D" parent="Spawns"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0815, 2.39477, -1.55187)

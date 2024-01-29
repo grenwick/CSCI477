@@ -49,7 +49,7 @@ func _input(event):
 		mouse_relative_x = clamp(event.relative.x, -50, 50)
 		mouse_relative_y = clamp(event.relative.y, -50, 10)
 		
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("pick_up") or Input.is_action_just_pressed("drop"):
 		handle_pickups()
 	

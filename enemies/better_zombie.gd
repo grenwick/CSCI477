@@ -19,7 +19,7 @@ func _ready():
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
 	
-func _process(delta):
+func _process(_delta):
 	velocity = Vector3.ZERO
 	
 	#check if the enemy is alive

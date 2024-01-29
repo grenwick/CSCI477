@@ -65,3 +65,22 @@ grow_vertical = 0
 
 [node name="CurrentItem" type="TextureRect" parent="AspectRatioContainer3"]
 layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 21.0
+offset_right = -23.0
+offset_bottom = 61.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="AspectRatioContainer4"]
+layout_mode = 2
+
+[node name="FPSUpdateTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="FPSUpdateTimer" to="." method="_on_fps_update_timer_timeout"]

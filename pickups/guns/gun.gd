@@ -14,7 +14,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
@@ -32,12 +32,13 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 				else:
 					i.set_as_top_level(true)
 					get_parent().add_child(i)
+					i.global_transform.origin = shot_spread[increment].get_collision_point() as Vector3
 				instance.init(gun_barrel.global_position, shot_spread[increment].get_collision_point())
 			else:
 				instance.init(gun_barrel.global_position, shot_trails[increment].global_position)
 			get_parent().add_child(instance)
 			
-			i.global_transform.origin = shot_spread[increment].get_collision_point() as Vector3
+			
 			increment += 1
 			
 	if gun_name == "Lyre":
