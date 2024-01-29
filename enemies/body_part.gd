@@ -15,6 +15,5 @@ func _process(delta):
 
 func hit(damage):
 	var total_damage = damage * damage_multiplier
-	print(total_damage)
 	emit_signal("body_part_hit", total_damage)
 	
