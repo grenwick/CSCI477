@@ -10,8 +10,6 @@ var current_health
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
-
 func hit_gun():
 	current_health -= 20
 
