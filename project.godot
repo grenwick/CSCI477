@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 GlobalVars="*res://global_vars.gd"
 
-[display]
-
-window/size/mode=3
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/qodot/plugin.cfg")

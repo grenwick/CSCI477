@@ -50,7 +50,8 @@ func _input(event):
 		mouse_relative_y = clamp(event.relative.y, -50, 10)
 		
 func _process(delta):
-	handle_pickups()
+	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("pick_up") or Input.is_action_just_pressed("drop"):
+		handle_pickups()
 	
 func _physics_process(delta):
 	# Add the gravity.
