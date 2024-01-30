@@ -1,7 +1,7 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var camera = $Camera3D
-
 #camera rays for interact / firing
 @onready var interact_ray = camera.get_node("InteractRay")
 @onready var shoot_ray = camera.get_node("ShootRay")
@@ -22,11 +22,6 @@ extends CharacterBody3D
 @onready var shot_spread = [shoot_ray, shoot_ray2, shoot_ray3, shoot_ray4, shoot_ray5, shoot_ray6, shoot_ray7]
 @onready var shot_trails = [shoot_ray_end, shoot_ray2_end, shoot_ray3_end, shoot_ray4_end, shoot_ray5_end, shoot_ray6_end, shoot_ray7_end]
 
-var MAX_HEALTH = 100;
-var current_health
-
-var selected_object : Object
-
 const SPEED = 8
 const JUMP_VELOCITY = 4
 
@@ -34,12 +29,13 @@ var mouseSensibility = 600
 var mouse_relative_x = 0
 var mouse_relative_y = 0
 
+signal player_hit()
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	current_health = MAX_HEALTH
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -76,13 +72,19 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func handle_pickups():
-	if is_instance_of(interact_ray.get_collider(), RigidBody3D):
-		selected_object = interact_ray.get_collider()
 	
 	if Input.is_action_just_pressed("pick_up") and !GlobalVars.held_object:
 		if is_instance_of(interact_ray.get_collider(), RigidBody3D):
 			GlobalVars.held_object = interact_ray.get_collider()
 			GlobalVars.held_object.visible = false
+		if GlobalVars.held_object:
+			match GlobalVars.held_object.gun_name:
+				"Frostbringer":
+					$Camera3D/Gun/Frostbringer.visible = true
+				"Lyre":
+					$Camera3D/Gun/Lyre.visible = true
+				"Revolver":
+					$Camera3D/Gun/Revolver.visible = true
 			
 	if Input.is_action_just_pressed("drop") and GlobalVars.held_object:
 		GlobalVars.held_object.lock_rotation = true
@@ -101,15 +103,9 @@ func handle_pickups():
 	if Input.is_action_just_pressed("primary action") and is_instance_of(GlobalVars.held_object, Gun):
 		GlobalVars.held_object.shoot(shot_spread, shot_trails, GlobalVars.held_object.name, $Camera3D/Gun/Frostbringer/Node3D)
 	
-	if GlobalVars.held_object:
-		match GlobalVars.held_object.gun_name:
-			"Frostbringer":
-				$Camera3D/Gun/Frostbringer.visible = true
-			"Lyre":
-				$Camera3D/Gun/Lyre.visible = true
-			"Revolver":
-				$Camera3D/Gun/Revolver.visible = true
-	else:
-		pass
 		
-		
+func hit(damage):
+	$PlayerCharacteristics.current_health -= damage
+	emit_signal("player_hit")
+	
+

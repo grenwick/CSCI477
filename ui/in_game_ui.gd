@@ -19,3 +19,11 @@ func _process(_delta):
 func _on_fps_update_timer_timeout():
 	fps = Engine.get_frames_per_second()
 	$AspectRatioContainer4/Label.text = str(fps)
+	
+func update_health(health):
+	$AspectRatioContainer/Label.text = str(health)
+
+func flash_red():
+	$DamageSplash.visible = true
+	await get_tree().create_timer(.15).timeout
+	$DamageSplash.visible = false

@@ -1279,8 +1279,6 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_ckka1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44919, 19.066)
-collision_layer = 3
-collision_mask = 3
 
 [node name="UI" parent="." instance=ExtResource("5_wj68d")]
 
@@ -1294,3 +1292,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75367, 7.01944, 13.7105)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3842, 2.73111, 10.9554)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]

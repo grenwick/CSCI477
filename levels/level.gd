@@ -8,12 +8,13 @@ var zombie_instance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$UI.update_health($Player/PlayerCharacteristics.current_health)
 	randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	$UI.update_health($Player/PlayerCharacteristics.current_health)
 
 func get_random_child(parent):
 	var random_id = randi() % parent.get_child_count()
@@ -29,4 +30,5 @@ func _on_spawn_timer_timeout():
 		navigation_region.add_child(zombie_instance)
 		
 	
-	
+func _on_player_player_hit():
+	$UI.flash_red()

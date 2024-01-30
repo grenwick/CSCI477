@@ -7,6 +7,7 @@ const SPEED = 4.0
 const MAX_HEALTH = 100
 
 const ATTACK_RANGE = 2.5
+const ATTACK_DAMAGE = 1
 
 @export var player_path := "/root/Level/Player"
 
@@ -23,7 +24,9 @@ func _process(_delta):
 	velocity = Vector3.ZERO
 	
 	#check if the enemy is alive
-	anim_tree.set("parameters/conditions/dead", !check_live())
+	if !check_live():
+		anim_tree.set("parameters/conditions/dead", true)
+		
 	
 	match state_machine.get_current_node():
 		"crawl":
@@ -57,3 +60,7 @@ func target_in_range():
 
 func _on_area_3d_body_part_hit(damage):
 	current_health -= damage
+	
+func hit_player():
+	if global_position.distance_to(player.global_position) < ATTACK_RANGE:
+		player.hit(ATTACK_DAMAGE)
