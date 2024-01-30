@@ -62,6 +62,7 @@ func _on_area_3d_body_part_hit(damage):
 	current_health -= damage
 	GameCharacteristics.score += 10
 	if current_health <= 0:
+		GameCharacteristics.kills += 1
 		GameCharacteristics.score += 50
 	
 func hit_player():
