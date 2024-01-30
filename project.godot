@@ -17,7 +17,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalVars="*res://global_vars.gd"
+GlobalVars="*res://globals/global_vars.gd"
+PlayerCharacteristics="*res://globals/player_characteristics.gd"
+
+[display]
+
+window/size/mode=3
 
 [editor_plugins]
 

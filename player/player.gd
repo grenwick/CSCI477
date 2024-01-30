@@ -46,6 +46,8 @@ func _input(event):
 		mouse_relative_y = clamp(event.relative.y, -50, 10)
 		
 func _process(_delta):
+	if PlayerCharacteristics.current_health <= 0:
+		handle_death()
 	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("pick_up") or Input.is_action_just_pressed("drop"):
 		handle_pickups()
 	
@@ -105,7 +107,13 @@ func handle_pickups():
 	
 		
 func hit(damage):
-	$PlayerCharacteristics.current_health -= damage
+	PlayerCharacteristics.current_health -= damage
 	emit_signal("player_hit")
+
+func handle_death():
+	#reset game state and start over
+	GlobalVars.reset()
+	PlayerCharacteristics.reset()
+	get_tree().reload_current_scene()
 	
 

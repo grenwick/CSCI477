@@ -18,7 +18,6 @@ func _process(_delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
-
 	if gun_name == "Frostbringer":
 		var bullet_array = [bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate()]
 		var increment = 0
