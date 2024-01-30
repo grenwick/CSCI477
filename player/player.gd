@@ -114,6 +114,7 @@ func handle_death():
 	#reset game state and start over
 	GlobalVars.reset()
 	PlayerCharacteristics.reset()
+	GameCharacteristics.reset()
 	get_tree().reload_current_scene()
 	
 

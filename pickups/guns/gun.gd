@@ -22,7 +22,6 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 		var bullet_array = [bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate()]
 		var increment = 0
 		for i in bullet_array:
-			
 			#make bullet trail, either it collides with object, or shoot it into space
 			instance = bullet_trail.instantiate()
 			if shot_spread[increment].is_colliding():

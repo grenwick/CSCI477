@@ -9,6 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	update_score()
 	if(GlobalVars.held_object):
 		$AspectRatioContainer3/CurrentItem.texture = load(GlobalVars.held_object.icon)
 	else:
@@ -22,6 +23,9 @@ func _on_fps_update_timer_timeout():
 	
 func update_health(health):
 	$AspectRatioContainer/Label.text = str(health)
+	
+func update_score():
+	$AspectRatioContainer5/Label.text = str(GameCharacteristics.score)
 
 func flash_red():
 	$DamageSplash.visible = true

@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 GlobalVars="*res://globals/global_vars.gd"
 PlayerCharacteristics="*res://globals/player_characteristics.gd"
+GameCharacteristics="*res://globals/game_characteristics.gd"
 
 [display]
 

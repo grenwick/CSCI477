@@ -102,6 +102,19 @@ grow_horizontal = 0
 [node name="Label" type="Label" parent="AspectRatioContainer4"]
 layout_mode = 2
 
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -85.0
+offset_right = 240.0
+offset_bottom = -45.0
+
+[node name="Label" type="Label" parent="AspectRatioContainer5"]
+layout_mode = 2
+
 [node name="FPSUpdateTimer" type="Timer" parent="."]
 autostart = true
 

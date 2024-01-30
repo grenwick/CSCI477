@@ -60,6 +60,9 @@ func target_in_range():
 
 func _on_area_3d_body_part_hit(damage):
 	current_health -= damage
+	GameCharacteristics.score += 10
+	if current_health <= 0:
+		GameCharacteristics.score += 50
 	
 func hit_player():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE:
