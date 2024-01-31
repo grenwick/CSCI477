@@ -1,7 +1,7 @@
 extends Node
 
 const DEFAULT_ROUND = 1
-const DEFAULT_SCORE = 750
+const DEFAULT_SCORE = 7500
 var current_round
 var score
 var kills

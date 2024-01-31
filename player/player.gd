@@ -48,8 +48,10 @@ func _input(event):
 func _process(_delta):
 	if PlayerCharacteristics.current_health <= 0:
 		handle_death()
-	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("pick_up") or Input.is_action_just_pressed("drop"):
+	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("drop"):
 		handle_pickups()
+	if Input.is_action_just_pressed("interact"):
+		handle_interaction()
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -75,8 +77,8 @@ func _physics_process(delta):
 	
 func handle_pickups():
 	
-	if Input.is_action_just_pressed("pick_up") and !GlobalVars.held_object:
-		if is_instance_of(interact_ray.get_collider(), RigidBody3D):
+	if Input.is_action_just_pressed("interact") and !GlobalVars.held_object:
+		if is_instance_of(interact_ray.get_collider(), Pickable):
 			GlobalVars.held_object = interact_ray.get_collider()
 			GlobalVars.held_object.visible = false
 		if GlobalVars.held_object:
@@ -106,6 +108,10 @@ func handle_pickups():
 		GlobalVars.held_object.shoot(shot_spread, shot_trails, GlobalVars.held_object.name, $Camera3D/Gun/Frostbringer/Node3D)
 	
 		
+func handle_interaction():
+	if is_instance_of(interact_ray.get_collider(), Interactible):
+		interact_ray.get_collider().interact()
+
 func hit(damage):
 	PlayerCharacteristics.current_health -= damage
 	emit_signal("player_hit")
