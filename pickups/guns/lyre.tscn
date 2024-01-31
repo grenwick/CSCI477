@@ -1,23 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx4ltgm8uw1k8"]
+[gd_scene load_steps=4 format=3 uid="uid://bx4ltgm8uw1k8"]
 
-[ext_resource type="PackedScene" uid="uid://58ciaxx02hnh" path="res://bullets/bullethole.tscn" id="1_vn23u"]
+[ext_resource type="Script" path="res://pickups/guns/lyre.gd" id="1_87kji"]
 [ext_resource type="ArrayMesh" uid="uid://dwysuoauontea" path="res://pixel_sprites/object_sprites/guns/lyre.obj" id="2_82ta0"]
-
-[sub_resource type="GDScript" id="GDScript_pnk0e"]
-script/source = "extends Gun
-
-const icon = \"res://pixel_sprites/ui/item_icons/lyre_icon.png\"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	gun_name = \"Lyre\"
-	gun_barrel = $Node3D
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e30vh"]
 size = Vector3(0.602112, 0.591797, 0.140991)
@@ -25,8 +9,7 @@ size = Vector3(0.602112, 0.591797, 0.140991)
 [node name="Lyre" type="RigidBody3D"]
 collision_layer = 2
 mass = 2.68
-script = SubResource("GDScript_pnk0e")
-bullethole = ExtResource("1_vn23u")
+script = ExtResource("1_87kji")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
