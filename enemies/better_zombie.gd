@@ -42,7 +42,7 @@ func _process(_delta):
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 		"die":
 			#if hp < 0, wait a few seconds and despawn zombie
-			$CollisionShape3D.disabled = true
+			disable_collisions()
 			await get_tree().create_timer(3.5).timeout
 			queue_free()
 		"stand":
@@ -68,3 +68,20 @@ func _on_area_3d_body_part_hit(damage):
 func hit_player():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE:
 		player.hit(ATTACK_DAMAGE)
+		
+func disable_collisions():
+	$Armature/Skeleton3D/Head/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/Torso/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftBicep/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightBicep/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftForearm/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightForearm/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftQuad/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftCalf/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightCalf/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightFoot/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftFoot/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightQuad/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/RightHand/Area3D/CollisionShape3D.disabled = true
+	$Armature/Skeleton3D/LeftHand/Area3D/CollisionShape3D.disabled = true
+	$CollisionShape3D.disabled = true
