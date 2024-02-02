@@ -2,7 +2,7 @@ extends Gun
 
 const icon = "res://pixel_sprites/ui/item_icons/frostbringer_icon.png"
 
-var WEAPON_DAMAGE = 20
+var WEAPON_DAMAGE = 75
 
 
 # Called when the node enters the scene tree for the first time.
