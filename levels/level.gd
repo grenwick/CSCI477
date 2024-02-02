@@ -17,7 +17,7 @@ var weapons = []
 func _ready():
 	$UI.update_health(PlayerCharacteristics.current_health)
 	randomize()
-	weapons = [frostbringer]
+	weapons = [frostbringer, revolver, lyre]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
