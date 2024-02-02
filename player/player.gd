@@ -22,7 +22,7 @@ class_name Player
 @onready var shot_spread = [shoot_ray, shoot_ray2, shoot_ray3, shoot_ray4, shoot_ray5, shoot_ray6, shoot_ray7]
 @onready var shot_trails = [shoot_ray_end, shoot_ray2_end, shoot_ray3_end, shoot_ray4_end, shoot_ray5_end, shoot_ray6_end, shoot_ray7_end]
 
-const SPEED = 8
+const SPEED = 6.5
 const JUMP_VELOCITY = 4
 
 var mouseSensibility = 600

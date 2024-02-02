@@ -4,7 +4,6 @@ var player = null
 var state_machine
 
 const SPEED = 4.0
-const MAX_HEALTH = 100
 
 const ATTACK_RANGE = 2.5
 const ATTACK_DAMAGE = 1
@@ -16,7 +15,7 @@ const ATTACK_DAMAGE = 1
 
 func _ready():
 	set_physics_process(false)
-	current_health = MAX_HEALTH
+	current_health = GameCharacteristics.zombie_health
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
 	
@@ -25,6 +24,10 @@ func _process(_delta):
 	
 	#check if the enemy is alive
 	if !check_live():
+		GameCharacteristics.kills += 1
+		GameCharacteristics.killed_zombies_in_round += 1
+		GameCharacteristics.current_score += 50
+		GameCharacteristics.check_round_completed()
 		anim_tree.set("parameters/conditions/dead", true)
 		
 	
@@ -60,10 +63,8 @@ func target_in_range():
 
 func _on_area_3d_body_part_hit(damage):
 	current_health -= damage
-	GameCharacteristics.score += 10
-	if current_health <= 0:
-		GameCharacteristics.kills += 1
-		GameCharacteristics.score += 50
+	GameCharacteristics.current_score += 10
+		
 	
 func hit_player():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE:

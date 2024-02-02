@@ -11,21 +11,27 @@ func _ready():
 func _process(_delta):
 	update_score()
 	if(GlobalVars.held_object):
-		$AspectRatioContainer3/CurrentItem.texture = load(GlobalVars.held_object.icon)
+		$CurrentItem/CurrentItem.texture = load(GlobalVars.held_object.icon)
 	else:
-		$AspectRatioContainer3/CurrentItem.texture = null
+		$CurrentItem/CurrentItem.texture = null
 	
 
 
 func _on_fps_update_timer_timeout():
 	fps = Engine.get_frames_per_second()
-	$AspectRatioContainer4/Label.text = str(fps)
+	$FPSCounter/Label.text = str(fps)
 	
 func update_health(health):
-	$AspectRatioContainer/Label.text = str(health)
+	$HealthSymbol/Label.text = str(health)
 	
 func update_score():
-	$AspectRatioContainer5/Label.text = str(GameCharacteristics.score)
+	$Score/Label.text = str(GameCharacteristics.current_score)
+
+func update_round():
+	$RoundCounter/Label.text = str(GameCharacteristics.current_round)
+	
+func update_kill_checker():
+	$"Kill Counter/Label".text = str(str(GameCharacteristics.killed_zombies_in_round) + "/" + str(GameCharacteristics.max_zombies_in_round))
 
 func flash_red():
 	$DamageSplash.visible = true

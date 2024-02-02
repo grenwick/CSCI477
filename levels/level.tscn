@@ -1259,7 +1259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8353, 1.71835, 10.0078)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2678, 2.0032, 15.1295)
 
 [node name="Spawnpoint5" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8479, 2.15941, 13.9296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8479, 2.00924, 13.9296)
 
 [node name="Spawnpoint6" type="Node3D" parent="Spawns"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0815, 2.39477, -1.55187)
@@ -1272,8 +1272,9 @@ autostart = true
 environment = SubResource("Environment_d636n")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.778528, 0.62761, 0, -0.62761, 0.778528, 0, 10.9099, 14.9932)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 14.91, 14.9932)
 visible = false
+light_energy = 0.177
 
 [node name="Player" parent="." instance=ExtResource("4_ckka1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44919, 19.066)

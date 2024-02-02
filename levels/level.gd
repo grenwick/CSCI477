@@ -17,12 +17,15 @@ var weapons = []
 func _ready():
 	$UI.update_health(PlayerCharacteristics.current_health)
 	randomize()
-	weapons = [frostbringer, revolver, lyre]
+	weapons = [frostbringer]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$UI.update_health(PlayerCharacteristics.current_health)
+	$UI.update_round()
+	$UI.update_kill_checker()
+	
 
 func get_random_child(parent):
 	var random_id = randi() % parent.get_child_count()
@@ -32,10 +35,12 @@ func _on_spawn_timer_timeout():
 	var spawn_point = get_random_child(spawns).global_position
 	
 	#spawn zombies up until the max enemy count is reached
-	if navigation_region.get_child_count() < 12:
+	if navigation_region.get_child_count() < 12 and GameCharacteristics.spawned_zombies_in_round < GameCharacteristics.max_zombies_in_round:
 		zombie_instance = zombie.instantiate()
+		GameCharacteristics.spawned_zombies_in_round += 1
 		zombie_instance.position = spawn_point
 		navigation_region.add_child(zombie_instance)
+
 	
 func _on_player_player_hit():
 	$UI.flash_red()
@@ -56,3 +61,4 @@ func _on_mystery_box_2_make_weapon():
 	generated_weapon.position = $MysteryBox2.position
 	generated_weapon.position.y += 1
 	
+

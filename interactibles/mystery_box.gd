@@ -12,15 +12,6 @@ func _process(delta):
 	pass
 
 func interact():
-	if GameCharacteristics.score >= 950:
-		GameCharacteristics.score -= 950
-		generate_weapon()
-	else:
-		print("broke boi lmao")
-		
-func generate_weapon():
-	emit_signal("make_weapon")
-	
-	
-	
-	
+	if GameCharacteristics.current_score >= 950:
+		GameCharacteristics.current_score -= 950
+		emit_signal("make_weapon")
