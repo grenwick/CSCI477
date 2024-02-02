@@ -2,6 +2,8 @@ extends Gun
 
 const icon = "res://pixel_sprites/ui/item_icons/frostbringer_icon.png"
 
+var WEAPON_DAMAGE = 20
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +24,7 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 			instance = bullet_trail.instantiate()
 			if shot_spread[increment].is_colliding():
 				if shot_spread[increment].get_collider().is_in_group("enemy"):
-					shot_spread[increment].get_collider().hit(20)
+					shot_spread[increment].get_collider().hit(WEAPON_DAMAGE)
 				else:
 					i.set_as_top_level(true)
 					get_parent().add_child(i)
