@@ -23,7 +23,7 @@ class_name Player
 @onready var shot_trails = [shoot_ray_end, shoot_ray2_end, shoot_ray3_end, shoot_ray4_end, shoot_ray5_end, shoot_ray6_end, shoot_ray7_end]
 
 const SPEED = 6.5
-const JUMP_VELOCITY = 4
+const JUMP_VELOCITY = 3
 
 var mouseSensibility = 600
 var mouse_relative_x = 0
@@ -105,7 +105,7 @@ func handle_pickups():
 		GlobalVars.held_object = null
 		
 	if Input.is_action_just_pressed("primary action") and is_instance_of(GlobalVars.held_object, Gun):
-		GlobalVars.held_object.shoot(shot_spread, shot_trails, GlobalVars.held_object.name, $Camera3D/Gun/Frostbringer/Node3D)
+		GlobalVars.held_object.shoot(shot_spread, shot_trails, GlobalVars.held_object.name, $Camera3D/Gun/Revolver/Node3D)
 	
 		
 func handle_interaction():

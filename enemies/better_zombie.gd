@@ -3,7 +3,7 @@ extends Enemy
 var player = null
 var state_machine
 
-const SPEED = 4.0
+const SPEED = 3.25
 
 const ATTACK_RANGE = 2.5
 const ATTACK_DAMAGE = 1
@@ -53,7 +53,6 @@ func _process(_delta):
 	
 	#conditions for different anims
 	anim_tree.set("parameters/conditions/attack", target_in_range())
-	anim_tree.set("parameters/conditions/run", !target_in_range())
 	
 	#anim_tree.get("parameters/playback")
 	move_and_slide()

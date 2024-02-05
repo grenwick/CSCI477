@@ -2,7 +2,10 @@ extends Gun
 
 const icon = "res://pixel_sprites/ui/item_icons/lyre_icon.png"
 
-var WEAPON_DAMAGE = 200
+var bullet = load("res://bullets/lyre_bullet.tscn")
+var bullet_instance
+
+var WEAPON_DAMAGE = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,17 +19,11 @@ func _process(delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
-		#make bullet trail, either it collides with object, or shoot it into space
-		instance = bullet_trail.instantiate()
-		if shot_spread[0].is_colliding():
-			if shot_spread[0].get_collider().is_in_group("enemy"):
-				shot_spread[0].get_collider().hit(WEAPON_DAMAGE)
-			else:
-				var bulletInst = bullethole.instantiate() as Node3D
-				bulletInst.set_as_top_level(true)
-				get_parent().add_child(bulletInst)
-				bulletInst.global_transform.origin = shot_spread[0].get_collision_point() as Vector3
-			instance.init(gun_barrel.global_position, shot_spread[0].get_collision_point())
-		else:
-			instance.init(gun_barrel.global_position, shot_trails[0].global_position)
-		get_parent().add_child(instance)
+	while Input.is_action_pressed("primary action"):
+		bullet_instance = bullet.instantiate()
+		bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
+		bullet_instance.position = gun_barrel.global_position
+		bullet_instance.transform.basis = shot_spread[0].global_transform.basis
+				
+		get_parent().add_child(bullet_instance)
+		await get_tree().create_timer(.15).timeout

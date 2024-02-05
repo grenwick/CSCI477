@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1bcrk2tm8lx"
+path="res://.godot/imported/music_note.obj-5aa5541175a3d3f2787c674aed3f2056.mesh"
+
+[deps]
+
+files=["res://.godot/imported/music_note.obj-5aa5541175a3d3f2787c674aed3f2056.mesh"]
+
+source_file="res://pixel_sprites/object_sprites/bullets/music_note.obj"
+dest_files=["res://.godot/imported/music_note.obj-5aa5541175a3d3f2787c674aed3f2056.mesh", "res://.godot/imported/music_note.obj-5aa5541175a3d3f2787c674aed3f2056.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
