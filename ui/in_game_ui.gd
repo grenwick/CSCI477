@@ -28,8 +28,13 @@ func update_score():
 	$Score/Label.text = str(GameCharacteristics.current_score)
 	
 func update_ammo():
-	$Ammo/Magazine.text = str(GlobalVars.held_object.current_magazine)
-	$Ammo/Magazine/Reserves.text = str(GlobalVars.held_object.current_reserves)
+	if GlobalVars.held_object:
+		if is_instance_of(GlobalVars.held_object, Gun):
+			$Ammo/Magazine.text = str(GlobalVars.held_object.current_magazine)
+			$Ammo/Magazine/Reserves.text = str(GlobalVars.held_object.current_reserves)
+			return
+	$Ammo/Magazine.text = ""
+	$Ammo/Magazine/Reserves.text = ""
 
 func update_round():
 	$RoundCounter/Label.text = str(GameCharacteristics.current_round)
