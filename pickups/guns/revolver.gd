@@ -12,6 +12,10 @@ func _ready():
 	gun_name = "Revolver"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
+	magazine_size = 8
+	reserves_size = 32
+	current_magazine = magazine_size
+	current_reserves = reserves_size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +23,10 @@ func _process(delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+	if !can_shoot():
+		return
+	
+	remove_ammo(1)
 	bullet_instance = bullet.instantiate()
 	bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
 	bullet_instance.position = gun_barrel.global_position

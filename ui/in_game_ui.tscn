@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7u4a1yc8v2ca"]
+[gd_scene load_steps=9 format=3 uid="uid://b7u4a1yc8v2ca"]
 
 [ext_resource type="Script" path="res://ui/in_game_ui.gd" id="1_6jxtk"]
 [ext_resource type="Texture2D" uid="uid://c8mjf4qkecmjo" path="res://pixel_sprites/ui/better_crosshair.png" id="1_ra756"]
@@ -10,6 +10,11 @@ font_size = 72
 
 [sub_resource type="LabelSettings" id="LabelSettings_p40ih"]
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_itykd"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_127tq"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -33,18 +38,6 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 0.301961)
-
-[node name="CrossHair" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Crosshair" type="TextureRect" parent="CrossHair"]
-layout_mode = 2
-texture = ExtResource("1_ra756")
 
 [node name="HealthSymbol" type="AspectRatioContainer" parent="."]
 layout_mode = 0
@@ -149,6 +142,41 @@ offset_bottom = -45.0
 
 [node name="Label" type="Label" parent="Score"]
 layout_mode = 2
+
+[node name="Ammo" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_top = -133.0
+offset_right = 234.0
+offset_bottom = -93.0
+
+[node name="Magazine" type="Label" parent="Ammo"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_itykd")
+
+[node name="Reserves" type="Label" parent="Ammo/Magazine"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 11.0
+offset_right = 88.0
+offset_bottom = 34.0
+label_settings = SubResource("LabelSettings_127tq")
+horizontal_alignment = 2
+
+[node name="CrossHair" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="TextureRect" parent="CrossHair"]
+layout_mode = 2
+texture = ExtResource("1_ra756")
 
 [node name="FPSUpdateTimer" type="Timer" parent="."]
 autostart = true

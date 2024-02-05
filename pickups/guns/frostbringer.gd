@@ -10,6 +10,10 @@ func _ready():
 	gun_name = "Frostbringer"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
+	magazine_size = 6
+	reserves_size = 22
+	current_magazine = magazine_size
+	current_reserves = reserves_size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,6 +21,9 @@ func _process(_delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+	if !can_shoot():
+		return
+	
 	#handle the charge mechanic
 	var charge_time = 0
 	while Input.is_action_pressed("primary action"):
@@ -29,6 +36,7 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 			charge_time += .0175
 			
 	#if charge satisfied, fire burst
+	remove_ammo(1)
 	var bullet_array = [bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate(), bullethole.instantiate()]
 	var increment = 0
 	for i in bullet_array:

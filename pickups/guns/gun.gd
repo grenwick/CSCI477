@@ -7,6 +7,11 @@ class_name Gun extends Pickable
 var bullet_trail = preload("res://bullets/bullet_trail.tscn")
 var instance
 
+var magazine_size
+var reserves_size
+var current_magazine
+var current_reserves
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,4 +22,11 @@ func _ready():
 func _process(_delta):
 	pass
 
+func can_shoot():
+	if current_magazine <= 0:
+		return false
+	return true
+
+func remove_ammo(shots_fired):
+	current_magazine -= shots_fired
 

@@ -7,11 +7,16 @@ var bullet_instance
 
 var WEAPON_DAMAGE = 20
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gun_name = "Lyre"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
+	magazine_size = 100
+	reserves_size = 900
+	current_magazine = magazine_size
+	current_reserves = reserves_size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +24,11 @@ func _process(delta):
 	pass
 
 func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+	if !can_shoot():
+		return
+		
 	while Input.is_action_pressed("primary action"):
+		remove_ammo(1)
 		bullet_instance = bullet.instantiate()
 		bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
 		bullet_instance.position = gun_barrel.global_position
