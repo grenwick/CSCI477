@@ -16,9 +16,6 @@ func _ready():
 func _process(delta):
 	position += transform.basis * Vector3(0, 0, -SPEED) * delta
 	if ray_cast.is_colliding():
-		mesh.visible = false
-		if ray_cast.get_collider().is_in_group("enemy"):
-			ray_cast.get_collider().hit(WEAPON_DAMAGE)
 		queue_free()
 
 
