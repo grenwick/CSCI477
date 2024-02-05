@@ -4,7 +4,7 @@ var fps
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	update_health(PlayerCharacteristics.current_health)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +14,10 @@ func _process(_delta):
 		$CurrentItem/CurrentItem.texture = load(GlobalVars.held_object.icon)
 	else:
 		$CurrentItem/CurrentItem.texture = null
-	
-
+	update_health(PlayerCharacteristics.current_health)
+	update_round()
+	update_kill_checker()
+	update_ammo()
 
 func _on_fps_update_timer_timeout():
 	fps = Engine.get_frames_per_second()
@@ -40,7 +42,7 @@ func update_round():
 	$RoundCounter/Label.text = str(GameCharacteristics.current_round)
 	
 func update_kill_checker():
-	$"Kill Counter/Label".text = str(str(GameCharacteristics.killed_zombies_in_round) + "/" + str(GameCharacteristics.max_zombies_in_round))
+	$KillCounter/Label.text = str(str(GameCharacteristics.killed_zombies_in_round) + "/" + str(GameCharacteristics.max_zombies_in_round))
 
 func flash_red():
 	$DamageSplash.visible = true

@@ -15,17 +15,13 @@ var weapons = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$UI.update_health(PlayerCharacteristics.current_health)
 	randomize()
 	weapons = [lyre, frostbringer, revolver]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$UI.update_health(PlayerCharacteristics.current_health)
-	$UI.update_round()
-	$UI.update_kill_checker()
-	$UI.update_ammo()
+	pass
 	
 
 func get_random_child(parent):
