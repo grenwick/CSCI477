@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctgnft8bt61k4"]
+[gd_scene load_steps=5 format=3 uid="uid://ctgnft8bt61k4"]
 
 [ext_resource type="Script" path="res://bullets/revolver_bullet.gd" id="1_j2a45"]
 
@@ -10,6 +10,9 @@ albedo_color = Color(1, 1, 0, 1)
 emission_enabled = true
 emission = Color(1, 1, 0.380392, 1)
 emission_energy_multiplier = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jseop"]
+size = Vector3(0.176758, 0.137909, 1.0481)
 
 [node name="RevolverBullet" type="Node3D"]
 script = ExtResource("1_j2a45")
@@ -27,5 +30,13 @@ collide_with_areas = true
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488, 0.000136346, -0.00256348)
+shape = SubResource("BoxShape3D_jseop")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

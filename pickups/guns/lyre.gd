@@ -20,10 +20,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+func shoot(shot_spread, _shot_trails, gun_barrel):
 	if !can_shoot():
 		return
 		

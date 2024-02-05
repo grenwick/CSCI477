@@ -20,7 +20,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+func shoot(shot_spread, shot_trails, gun_barrel):
 	if !can_shoot():
 		return
 	

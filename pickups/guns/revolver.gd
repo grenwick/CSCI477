@@ -19,10 +19,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
+func shoot(shot_spread, _shot_trails, gun_barrel):
 	if !can_shoot():
 		return
 	
@@ -31,7 +31,7 @@ func shoot(shot_spread, shot_trails, gun_name, gun_barrel):
 	bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
 	bullet_instance.position = gun_barrel.global_position
 	bullet_instance.transform.basis = shot_spread[0].global_transform.basis
-	if shot_spread[0].is_colliding:
+	if shot_spread[0].is_colliding():
 		if !shot_spread[0].get_collider().is_in_group("enemy"):
 			var hole_instance = bullethole.instantiate() as Node3D
 			hole_instance.global_transform.origin = shot_spread[0].get_collision_point()

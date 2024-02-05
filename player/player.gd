@@ -105,7 +105,7 @@ func handle_pickups():
 		GlobalVars.held_object = null
 		
 	if Input.is_action_just_pressed("primary action") and is_instance_of(GlobalVars.held_object, Gun):
-		GlobalVars.held_object.shoot(shot_spread, shot_trails, GlobalVars.held_object.name, $Camera3D/Gun/Frostbringer/Node3D)
+		GlobalVars.held_object.shoot(shot_spread, shot_trails, $Camera3D/Gun/Frostbringer/Node3D)
 	
 		
 func handle_interaction():
