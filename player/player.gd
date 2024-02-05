@@ -101,7 +101,7 @@ func handle_pickups():
 					$Camera3D/Gun/Lyre.visible = false
 				"Revolver":
 					$Camera3D/Gun/Revolver.visible = false
-		GlobalVars.held_object.global_transform.origin = $Camera3D/Gun/Frostbringer.global_transform.origin
+		GlobalVars.held_object.queue_free()
 		GlobalVars.held_object = null
 		
 	if Input.is_action_just_pressed("primary action") and is_instance_of(GlobalVars.held_object, Gun):
