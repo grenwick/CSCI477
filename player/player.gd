@@ -48,7 +48,7 @@ func _input(event):
 func _process(_delta):
 	if PlayerCharacteristics.current_health <= 0:
 		handle_death()
-	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("drop"):
+	if Input.is_action_just_pressed("primary action") or Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("drop") or Input.is_action_just_pressed("reload"):
 		handle_pickups()
 	if Input.is_action_just_pressed("interact"):
 		handle_interaction()
@@ -105,9 +105,15 @@ func handle_pickups():
 		GlobalVars.held_object = null
 		
 	if Input.is_action_just_pressed("primary action") and is_instance_of(GlobalVars.held_object, Gun):
-		GlobalVars.held_object.shoot(shot_spread, shot_trails, $Camera3D/Gun/Frostbringer/Node3D)
-	
-		
+		if GlobalVars.held_object.current_magazine > 0:
+			if !GlobalVars.held_object.is_reloading:
+				GlobalVars.held_object.shoot(shot_spread, shot_trails, $Camera3D/Gun/Frostbringer/Node3D)
+		else:
+			GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
+			
+	if Input.is_action_just_pressed("reload") and is_instance_of(GlobalVars.held_object, Gun):
+		GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
+
 func handle_interaction():
 	if is_instance_of(interact_ray.get_collider(), Interactible):
 		interact_ray.get_collider().interact()

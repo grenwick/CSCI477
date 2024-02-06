@@ -1,7 +1,8 @@
 extends Node
 
-var MAX_HEALTH = 3;
+var MAX_HEALTH = 3
 var current_health
+var reload_multiplier = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
