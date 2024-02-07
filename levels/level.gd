@@ -16,7 +16,7 @@ var weapons = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	weapons = [revolver, lyre, frostbringer]
+	weapons = [lyre, frostbringer]
 	var starting_gun = revolver.instantiate()
 	add_child(starting_gun)
 	#spaghetti ass code
@@ -64,3 +64,17 @@ func _on_mystery_box_2_make_weapon():
 	generated_weapon.position.y += 1
 	
 
+func upgrade_weapon():
+	GlobalVars.held_object.weapon_level += 1
+	GlobalVars.held_object.WEAPON_DAMAGE *= 2.25
+	GlobalVars.held_object.magazine_size *= 1.5
+	GlobalVars.held_object.magazine_size = int(GlobalVars.held_object.magazine_size)
+	GlobalVars.held_object.reserves_size *= 1.5
+	GlobalVars.held_object.reserves_size = int(GlobalVars.held_object.reserves_size)
+	GlobalVars.held_object.current_magazine = GlobalVars.held_object.magazine_size
+	GlobalVars.held_object.current_reserves = GlobalVars.held_object.reserves_size
+	
+
+func _on_gun_upgrader_upgrade_weapon():
+	upgrade_weapon()
+	

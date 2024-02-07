@@ -12,6 +12,8 @@ var reserves_size
 var current_magazine
 var current_reserves
 
+var weapon_level = 0
+
 var is_reloading = false
 
 # Called when the node enters the scene tree for the first time.

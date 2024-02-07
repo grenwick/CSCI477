@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=3 uid="uid://k4au8fs6lx4u"]
+[gd_scene load_steps=211 format=3 uid="uid://k4au8fs6lx4u"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_3j7go"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_4g6hv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvfr8kq0ibwoq" path="res://textures/Skyboxes/panorama4.jpg" id="4_nf4lr"]
 [ext_resource type="Texture2D" uid="uid://cc3j0sdr6qv8u" path="res://textures/TexturePack1/256x256/Grass/Grass_01-256x256.png" id="5_tpbon"]
 [ext_resource type="PackedScene" uid="uid://b7u4a1yc8v2ca" path="res://ui/in_game_ui.tscn" id="5_wj68d"]
+[ext_resource type="PackedScene" uid="uid://bf4y4x4grj625" path="res://interactibles/gun_upgrader.tscn" id="11_0kddi"]
 [ext_resource type="PackedScene" uid="uid://djp702y81levi" path="res://interactibles/mystery_box.tscn" id="13_m6460"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nhckn"]
@@ -1287,7 +1288,11 @@ transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 1.47137, 12.3711)
 [node name="MysteryBox2" parent="." instance=ExtResource("13_m6460")]
 transform = Transform3D(-1.44248e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.44248e-08, 6.43767, 5.97733, 13.7918)
 
+[node name="GunUpgrader" parent="." instance=ExtResource("11_0kddi")]
+transform = Transform3D(-1.44248e-08, 0, -0.33, 0, 0.33, 0, 0.33, 0, -1.44248e-08, 7.21766, 1.9976, 2.6684)
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
 [connection signal="make_weapon" from="MysteryBox" to="." method="_on_mystery_box_make_weapon"]
 [connection signal="make_weapon" from="MysteryBox2" to="." method="_on_mystery_box_2_make_weapon"]
+[connection signal="upgrade_weapon" from="GunUpgrader" to="." method="_on_gun_upgrader_upgrade_weapon"]
