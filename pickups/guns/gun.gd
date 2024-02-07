@@ -32,11 +32,14 @@ func remove_ammo(shots_fired):
 	current_magazine -= shots_fired
 
 func reload(reload_speed, reload_multiplier):
+	var rounds_to_reload = magazine_size - current_magazine
+	if rounds_to_reload > current_reserves :
+		rounds_to_reload = current_reserves
 	#set state to reloading to prevent firing
 	is_reloading = true
 	var reload_time = reload_speed / reload_multiplier
 	await get_tree().create_timer(reload_time).timeout
-	var rounds_to_reload = magazine_size - current_magazine
+	
 	current_reserves -= rounds_to_reload
 	current_magazine += rounds_to_reload
 	#reallow firing

@@ -109,10 +109,12 @@ func handle_pickups():
 			if !GlobalVars.held_object.is_reloading:
 				GlobalVars.held_object.shoot(shot_spread, shot_trails, $Camera3D/Gun/Frostbringer/Node3D)
 		else:
-			GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
+			if !GlobalVars.held_object.is_reloading:
+				GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
 			
 	if Input.is_action_just_pressed("reload") and is_instance_of(GlobalVars.held_object, Gun):
-		GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
+		if !GlobalVars.held_object.is_reloading:
+			GlobalVars.held_object.reload(1, PlayerCharacteristics.reload_multiplier)
 
 func handle_interaction():
 	if is_instance_of(interact_ray.get_collider(), Interactible):
