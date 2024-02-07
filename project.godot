@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CSCI477"
-run/main_scene="res://levels/level.tscn"
+run/main_scene="res://ui/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -20,6 +20,11 @@ config/icon="res://icon.png"
 GlobalVars="*res://globals/global_vars.gd"
 PlayerCharacteristics="*res://globals/player_characteristics.gd"
 GameCharacteristics="*res://globals/game_characteristics.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

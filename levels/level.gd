@@ -16,7 +16,12 @@ var weapons = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	weapons = [lyre, frostbringer, revolver]
+	weapons = [revolver, lyre, frostbringer]
+	var starting_gun = revolver.instantiate()
+	add_child(starting_gun)
+	#spaghetti ass code
+	$Player/Camera3D/Gun/Revolver.visible = true
+	GlobalVars.held_object = starting_gun
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

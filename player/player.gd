@@ -127,6 +127,7 @@ func handle_death():
 	GlobalVars.reset()
 	PlayerCharacteristics.reset()
 	GameCharacteristics.reset()
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://ui/title_screen.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 
