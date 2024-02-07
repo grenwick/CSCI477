@@ -17,6 +17,10 @@ var zombie_health
 var killed_zombies_in_round
 var spawned_zombies_in_round
 
+var upgrade_cost_l1 = 2500
+var upgrade_cost_l2 = 10000
+var upgrade_cost_l3 = 25000
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -2,9 +2,7 @@ extends Interactible
 
 signal upgrade_weapon
 
-var UPGRADE_COST_L1 = 2500
-var UPGRADE_COST_L2 = 10000
-var UPGRADE_COST_L3 = 25000
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,16 +18,16 @@ func interact():
 		if is_instance_of(GlobalVars.held_object, Gun):
 			match GlobalVars.held_object.weapon_level:
 				0:
-					if GameCharacteristics.current_score >= UPGRADE_COST_L1:
-						GameCharacteristics.current_score -= UPGRADE_COST_L1
+					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l1:
+						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l1
 						emit_signal("upgrade_weapon")
 				1:
-					if GameCharacteristics.current_score >= UPGRADE_COST_L2:
-						GameCharacteristics.current_score -= UPGRADE_COST_L2
+					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l2:
+						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l2
 						emit_signal("upgrade_weapon")
 				2:
-					if GameCharacteristics.current_score >= UPGRADE_COST_L3:
-						GameCharacteristics.current_score -= UPGRADE_COST_L3
+					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l3:
+						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l3
 						emit_signal("upgrade_weapon")
 				_:
 					pass
