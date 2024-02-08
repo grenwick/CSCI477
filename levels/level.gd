@@ -81,15 +81,24 @@ func _on_gun_upgrader_upgrade_weapon():
 
 
 func _on_player_player_dead():
+	#puase game, hide level, and show stats
+	get_tree().paused = true
 	$UI.hide()
 	visible = false
 	$DeathScreen.show_stats()
-	GlobalVars.reset()
-	PlayerCharacteristics.reset()
-	GameCharacteristics.reset()
+	
+	#spaghetti ass code, waits for space to be pressed
 	while(true):
 		if Input.is_action_pressed("jump"):
 			break
 		await get_tree().create_timer(.01).timeout
+		
+	#reset stats and level
+	GlobalVars.reset()
+	PlayerCharacteristics.reset()
+	GameCharacteristics.reset()
+	
+	#unpause and switch back to main menu
+	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://ui/title_screen.tscn")
