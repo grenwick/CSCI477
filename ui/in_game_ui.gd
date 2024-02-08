@@ -48,3 +48,5 @@ func flash_red():
 	$DamageSplash.visible = true
 	await get_tree().create_timer(.15).timeout
 	$DamageSplash.visible = false
+
+

@@ -8,6 +8,9 @@ const SPEED = 3.25
 const ATTACK_RANGE = 2.5
 const ATTACK_DAMAGE = 1
 
+const HIT_VALUE = 10
+const DEATH_VALUE = 50
+
 @export var player_path := "/root/Level/Player"
 
 @onready var nav_agent = $NavigationAgent3D
@@ -26,7 +29,8 @@ func _process(_delta):
 	if !check_live():
 		GameCharacteristics.kills += 1
 		GameCharacteristics.killed_zombies_in_round += 1
-		GameCharacteristics.current_score += 50
+		GameCharacteristics.current_score += DEATH_VALUE
+		GameCharacteristics.total_score += DEATH_VALUE
 		GameCharacteristics.check_round_completed()
 		anim_tree.set("parameters/conditions/dead", true)
 		
@@ -62,7 +66,8 @@ func target_in_range():
 
 func _on_area_3d_body_part_hit(damage):
 	current_health -= damage
-	GameCharacteristics.current_score += 10
+	GameCharacteristics.current_score += HIT_VALUE
+	GameCharacteristics.total_score += HIT_VALUE
 		
 	
 func hit_player():

@@ -30,6 +30,7 @@ var mouse_relative_x = 0
 var mouse_relative_y = 0
 
 signal player_hit()
+signal player_dead()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -125,11 +126,6 @@ func hit(damage):
 	emit_signal("player_hit")
 
 func handle_death():
-	#reset game state and start over
-	GlobalVars.reset()
-	PlayerCharacteristics.reset()
-	GameCharacteristics.reset()
-	get_tree().change_scene_to_file("res://ui/title_screen.tscn")
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#tell level that the player is dead
+	emit_signal("player_dead")
 	
-

@@ -78,3 +78,18 @@ func upgrade_weapon():
 func _on_gun_upgrader_upgrade_weapon():
 	upgrade_weapon()
 	
+
+
+func _on_player_player_dead():
+	$UI.hide()
+	visible = false
+	$DeathScreen.show_stats()
+	GlobalVars.reset()
+	PlayerCharacteristics.reset()
+	GameCharacteristics.reset()
+	while(true):
+		if Input.is_action_pressed("jump"):
+			break
+		await get_tree().create_timer(.01).timeout
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://ui/title_screen.tscn")
