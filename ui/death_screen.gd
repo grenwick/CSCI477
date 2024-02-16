@@ -22,7 +22,7 @@ func update_stats():
 	$RoundsSurvived/Label.text += "\nScore: " + str(score)
 	$RoundsSurvived/Label.text += "\nKills: " + str(kills)
 	$RoundsSurvived/Label.text += "\nHeadshots: " + str(headshots)
-	$RoundsSurvived/Label.text += "\nPress Space to Continue"
+	$RoundsSurvived/Label.text += "\n\nPress Space to Continue"
 	
 func show_stats():
 	update_stats()
