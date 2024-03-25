@@ -101,4 +101,4 @@ func _on_player_player_dead():
 	#unpause and switch back to main menu
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	get_tree().change_scene_to_file("res://ui/title_screen.tscn")
+	get_tree().change_scene_to_file("res://levels/level.tscn")
