@@ -13,7 +13,7 @@ func _ready():
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
 	magazine_size = 8
-	reserves_size = 32
+	reserves_size = 320
 	current_magazine = magazine_size
 	current_reserves = reserves_size
 
