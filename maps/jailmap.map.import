@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://5xn4o4v5eci8"
+path="res://.godot/imported/jailmap.map-c4ac946bd7c9914a64b3369e19ae1d0d.tres"
+
+[deps]
+
+source_file="res://maps/jailmap.map"
+dest_files=["res://.godot/imported/jailmap.map-c4ac946bd7c9914a64b3369e19ae1d0d.tres"]
+
+[params]
+
