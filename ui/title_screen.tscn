@@ -22,7 +22,7 @@ position = Vector2(576, 75)
 scale = Vector2(2.41406, 2.20312)
 texture = ExtResource("2_h0yoq")
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="MenuButton" parent="."]
 offset_left = 67.0
 offset_top = 255.0
 offset_right = 230.0
@@ -30,6 +30,11 @@ offset_bottom = 321.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ntesa")
 icon = ExtResource("3_eguou")
 expand_icon = true
+item_count = 2
+popup/item_0/text = "House"
+popup/item_0/id = 0
+popup/item_1/text = "Jail"
+popup/item_1/id = 1
 
 [node name="SettingsButton" type="Button" parent="."]
 offset_left = 72.0
