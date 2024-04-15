@@ -1,4 +1,4 @@
-[gd_scene load_steps=335 format=3 uid="uid://d14p8aety8w0i"]
+[gd_scene load_steps=336 format=3 uid="uid://d14p8aety8w0i"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_r0rig"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_tl1jx"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://w6o3nuravyu0" path="res://player/player.tscn" id="14_4mwdo"]
 [ext_resource type="Texture2D" uid="uid://cvfr8kq0ibwoq" path="res://textures/Skyboxes/panorama4.jpg" id="14_6ax4x"]
 [ext_resource type="PackedScene" uid="uid://b7u4a1yc8v2ca" path="res://ui/in_game_ui.tscn" id="15_o206i"]
+[ext_resource type="PackedScene" uid="uid://2wpxfqntcmnm" path="res://solid_objects/invis_stairs.tscn" id="15_plvlt"]
 [ext_resource type="PackedScene" uid="uid://bf4y4x4grj625" path="res://interactibles/gun_upgrader.tscn" id="16_8bho1"]
 [ext_resource type="PackedScene" uid="uid://djp702y81levi" path="res://interactibles/mystery_box.tscn" id="18_kinbx"]
 [ext_resource type="PackedScene" uid="uid://dv26kfow321fw" path="res://ui/death_screen.tscn" id="18_s4hny"]
@@ -2026,6 +2027,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39073, 10.0158, 13.1701)
 
 [node name="Spawnpoint6" type="Node3D" parent="Spawns"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3945, 5.5653, -4.27016)
+
+[node name="InvisibleObjects" type="Node3D" parent="."]
+
+[node name="stair1" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(-4, 0, -1.50996e-06, 0, 10, 0, 6.03983e-07, 0, -10, 27.0703, 0, 17.0638)
+
+[node name="stair2" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(-4, 0, -1.50996e-06, 0, 10, 0, 6.03983e-07, 0, -10, 27.0205, -9.45379, 3.51543)
+
+[node name="stair3" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(-3.0598e-07, 0, 2.8, 0, 2.6, 0, -7, 0, -1.22392e-07, -21.1773, 0.514162, 8.98083)
+
+[node name="stair4" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(-7, 0, -4.22788e-07, 0, 2.55, 0, 1.05697e-06, 0, -2.8, -21.4704, 2.99244, 11.1792)
+
+[node name="stair5" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(7, 0, 0, 0, 2.55, 0, 0, 0, 2.8, -28.5037, 2.90293, 0.032979)
+
+[node name="stair6" parent="InvisibleObjects" instance=ExtResource("15_plvlt")]
+transform = Transform3D(-3.49691e-07, 0, 1, 0, 1, 0, -8, 0, -4.37114e-08, -10.0084, 9.99695, 9.32658)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
