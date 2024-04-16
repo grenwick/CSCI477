@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bg6qqasoqt3rm"
+path="res://.godot/imported/WaterGun.obj-ab0af77b7cbaf6d049a603a2c27b59bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WaterGun.obj-ab0af77b7cbaf6d049a603a2c27b59bc.mesh"]
+
+source_file="res://pixel_sprites/object_sprites/guns/WaterGun.obj"
+dest_files=["res://.godot/imported/WaterGun.obj-ab0af77b7cbaf6d049a603a2c27b59bc.mesh", "res://.godot/imported/WaterGun.obj-ab0af77b7cbaf6d049a603a2c27b59bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

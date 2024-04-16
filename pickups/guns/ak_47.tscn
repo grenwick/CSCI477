@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bte3divjcbten"]
+
+[ext_resource type="ArrayMesh" uid="uid://cndjubuxm4gyl" path="res://pixel_sprites/object_sprites/guns/AK47Model.obj" id="1_fyypt"]
+[ext_resource type="Script" path="res://pickups/guns/ak_47.gd" id="1_nlryb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oaah6"]
+size = Vector3(2.16478, 0.668518, 0.282898)
+
+[node name="AK47" type="RigidBody3D"]
+collision_layer = 2
+script = ExtResource("1_nlryb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0, 0, 0)
+mesh = ExtResource("1_fyypt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224759, 0.506622, 0.0136414)
+shape = SubResource("BoxShape3D_oaah6")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826844, 0.589574, 0.0181239)

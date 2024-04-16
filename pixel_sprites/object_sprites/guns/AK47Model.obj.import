@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cndjubuxm4gyl"
+path="res://.godot/imported/AK47Model.obj-31392a79df921bd100464bf2dd2070ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AK47Model.obj-31392a79df921bd100464bf2dd2070ff.mesh"]
+
+source_file="res://pixel_sprites/object_sprites/guns/AK47Model.obj"
+dest_files=["res://.godot/imported/AK47Model.obj-31392a79df921bd100464bf2dd2070ff.mesh", "res://.godot/imported/AK47Model.obj-31392a79df921bd100464bf2dd2070ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

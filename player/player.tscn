@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://w6o3nuravyu0"]
+[gd_scene load_steps=8 format=3 uid="uid://w6o3nuravyu0"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_w2ldp"]
 [ext_resource type="PackedScene" uid="uid://b6rl1arfg0pgp" path="res://pickups/guns/frostbringer.tscn" id="2_7w37v"]
 [ext_resource type="PackedScene" uid="uid://bfoscphlq5pqx" path="res://pickups/guns/revolver.tscn" id="3_4275c"]
 [ext_resource type="PackedScene" uid="uid://bx4ltgm8uw1k8" path="res://pickups/guns/lyre.tscn" id="4_ppefy"]
+[ext_resource type="PackedScene" uid="uid://bte3divjcbten" path="res://pickups/guns/ak_47.tscn" id="5_awxkp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ngj4o"]
 
@@ -119,6 +120,13 @@ visible = false
 collision_layer = 128
 collision_mask = 0
 gravity_scale = 0.0
+freeze = true
+
+[node name="AK47" parent="Camera3D/Gun" instance=ExtResource("5_awxkp")]
+transform = Transform3D(0.0593063, 0, -0.99824, 0, 1, 0, 0.99824, 0, 0.0593063, 0.337907, -0.854053, -0.899721)
+visible = false
+collision_layer = 128
+collision_mask = 0
 freeze = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]

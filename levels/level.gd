@@ -9,6 +9,7 @@ var zombie_instance
 var frostbringer = preload("res://pickups/guns/frostbringer.tscn")
 var revolver = preload("res://pickups/guns/revolver.tscn")
 var lyre = preload("res://pickups/guns/lyre.tscn")
+var ak47 = preload("res://pickups/guns/ak_47.tscn")
 
 var weapons = []
 
@@ -16,7 +17,7 @@ var weapons = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	weapons = [lyre, frostbringer]
+	weapons = [lyre, frostbringer, ak47]
 	var starting_gun = revolver.instantiate()
 	add_child(starting_gun)
 	#spaghetti ass code

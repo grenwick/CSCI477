@@ -28,6 +28,8 @@ func shoot(shot_spread, _shot_trails, gun_barrel):
 		return
 		
 	while Input.is_action_pressed("primary action"):
+		if !can_shoot():
+			return
 		remove_ammo(1)
 		bullet_instance = bullet.instantiate()
 		bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
