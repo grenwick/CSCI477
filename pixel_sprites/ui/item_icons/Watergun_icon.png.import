@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd7oc32t7n3tq"
-path="res://.godot/imported/Water Gun Pixelated.png-0977c8cc8aa8aa5468b288d8a23a6eef.ctex"
+uid="uid://kp0rank4fngf"
+path="res://.godot/imported/Watergun_icon.png-25b6bea29e8ca9202100cbb26951ea22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixel_sprites/ui/item_icons/Water Gun Pixelated.png"
-dest_files=["res://.godot/imported/Water Gun Pixelated.png-0977c8cc8aa8aa5468b288d8a23a6eef.ctex"]
+source_file="res://pixel_sprites/ui/item_icons/Watergun_icon.png"
+dest_files=["res://.godot/imported/Watergun_icon.png-25b6bea29e8ca9202100cbb26951ea22.ctex"]
 
 [params]
 

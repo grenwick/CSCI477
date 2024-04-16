@@ -92,6 +92,8 @@ func handle_pickups():
 					$Camera3D/Gun/Revolver.visible = true
 				"AK-47":
 					$Camera3D/Gun/AK47.visible = true
+				"Water Gun":
+					$Camera3D/Gun/watergun.visible = true
 			
 	if Input.is_action_just_pressed("drop") and GlobalVars.held_object:
 		GlobalVars.held_object.lock_rotation = true
@@ -106,6 +108,8 @@ func handle_pickups():
 					$Camera3D/Gun/Revolver.visible = false
 				"AK-47":
 					$Camera3D/Gun/AK47.visible = false
+				"Water Gun":
+					$Camera3D/Gun/watergun.visible = false
 		GlobalVars.held_object.queue_free()
 		GlobalVars.held_object = null
 		

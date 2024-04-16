@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk6doy1wshgyh"]
+
+[ext_resource type="Script" path="res://pickups/guns/watergun.gd" id="1_bf8yu"]
+[ext_resource type="ArrayMesh" uid="uid://bg6qqasoqt3rm" path="res://pixel_sprites/object_sprites/guns/WaterGun.obj" id="1_g36g6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqcux"]
+size = Vector3(1.01736, 0.678406, 0.491486)
+
+[node name="watergun" type="RigidBody3D"]
+script = ExtResource("1_bf8yu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_g36g6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263825, 0.33999, 0.274789)
+shape = SubResource("BoxShape3D_gqcux")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207493, 0.22617, 0.244248)
