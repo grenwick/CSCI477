@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://w6o3nuravyu0"]
+[gd_scene load_steps=10 format=3 uid="uid://w6o3nuravyu0"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_w2ldp"]
 [ext_resource type="PackedScene" uid="uid://b6rl1arfg0pgp" path="res://pickups/guns/frostbringer.tscn" id="2_7w37v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4ltgm8uw1k8" path="res://pickups/guns/lyre.tscn" id="4_ppefy"]
 [ext_resource type="PackedScene" uid="uid://bte3divjcbten" path="res://pickups/guns/ak_47.tscn" id="5_awxkp"]
 [ext_resource type="PackedScene" uid="uid://bk6doy1wshgyh" path="res://pickups/guns/watergun.tscn" id="6_n4x77"]
+[ext_resource type="PackedScene" uid="uid://djwgpctfwxm1g" path="res://pickups/guns/bazooka.tscn" id="7_6djgn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ngj4o"]
 
@@ -26,7 +27,7 @@ shape = SubResource("CapsuleShape3D_ngj4o")
 mesh = SubResource("CapsuleMesh_0o1h6")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438189, 0.75, -0.0853887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0185849, 0.75, -0.0853887)
 current = true
 
 [node name="InteractRay" type="RayCast3D" parent="Camera3D"]
@@ -136,6 +137,10 @@ visible = false
 collision_layer = 128
 collision_mask = 0
 freeze = true
+
+[node name="Bazooka" parent="Camera3D/Gun" instance=ExtResource("7_6djgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.327064, -0.237006, -0.12995)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
 light_energy = 5.04
