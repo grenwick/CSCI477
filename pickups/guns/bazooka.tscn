@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://djwgpctfwxm1g"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8um50dbjxcow" path="res://pixel_sprites/object_sprites/guns/Bazooka.obj" id="1_5qvpf"]
+[ext_resource type="Script" path="res://pickups/guns/bazooka.gd" id="2_md722"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hqrh"]
+size = Vector3(0.425049, 0.608337, 1.91309)
+
+[node name="Bazooka" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107346, 0.0916339, 0)
+script = ExtResource("2_md722")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.0791318, 0)
+mesh = ExtResource("1_5qvpf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0460205, 1.11351, -0.117676)
+shape = SubResource("BoxShape3D_3hqrh")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0942918, 2.38746, -1.84035)
