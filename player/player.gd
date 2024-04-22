@@ -25,7 +25,7 @@ class_name Player
 const SPEED = 6.5
 const JUMP_VELOCITY = 3
 
-var mouseSensibility = 600
+var mouseSensibility = 200
 var mouse_relative_x = 0
 var mouse_relative_y = 0
 

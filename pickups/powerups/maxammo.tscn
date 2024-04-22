@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ycv88irflla"]
+
+[ext_resource type="ArrayMesh" uid="uid://dfjwnfab0vphv" path="res://pixel_sprites/object_sprites/powerups/maxammo.obj" id="1_jxhms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6l16"]
+size = Vector3(3, 2, 1)
+
+[node name="Maxammo" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_y6l16")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_jxhms")
