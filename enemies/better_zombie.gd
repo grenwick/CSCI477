@@ -21,6 +21,8 @@ const DEATH_VALUE = 50
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
+@onready var hit_sound = $hit_sound
+@onready var zombie_growl = $zombie_growl
 
 func _ready():
 	set_physics_process(false)
@@ -54,9 +56,12 @@ func _process(_delta):
 		"attack":
 			#look at player
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+			#chance to growl (1 in 2, assuming 60 frames)
+			if randi() % 120 == 0:
+				zombie_growl.play()
 		"die":
 			if dead == false:
-				if randi() % 20 == 0:
+				if randi() % 1 == 0:
 					var lootbox = max_ammo.instantiate()
 					lootbox.position = position
 					level.add_child(lootbox)
@@ -78,6 +83,7 @@ func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 
 func _on_area_3d_body_part_hit(damage):
+	hit_sound.play()
 	current_health -= damage
 	GameCharacteristics.current_score += HIT_VALUE
 	GameCharacteristics.total_score += HIT_VALUE

@@ -57,6 +57,7 @@ expand_icon = true
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4f8f2")
+volume_db = 10.23
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

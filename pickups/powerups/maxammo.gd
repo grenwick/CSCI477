@@ -1,9 +1,11 @@
 extends RigidBody3D
 
+@onready var pickup_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$DestroyTimer.connect("timeout", _on_destroy_timer_timeout)
+	pickup_sound = $maxammo_pickup
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +16,12 @@ func _process(delta):
 	##compare them
 	pass
 
+func _on_destroy_timer_timeout():
+	queue_free()
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Player"):
+		pickup_sound.play()
+		visible = false
 		GlobalVars.held_object.current_reserves = GlobalVars.held_object.reserves_size
-		queue_free();
+		$DestroyTimer.start()

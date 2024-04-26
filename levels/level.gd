@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var spawns = $Spawns
 @onready var navigation_region = $NavigationRegion3D
+@onready var powerup_sound = $powerup_sound
 
 var zombie = load("res://enemies/better_zombie.tscn")
 var zombie_instance
@@ -14,7 +15,6 @@ var watergun = preload("res://pickups/guns/watergun.tscn")
 var bazooka = preload("res://pickups/guns/bazooka.tscn")
 
 var weapons = []
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -81,7 +81,6 @@ func upgrade_weapon():
 func _on_gun_upgrader_upgrade_weapon():
 	upgrade_weapon()
 	
-
 
 func _on_player_player_dead():
 	#puase game, hide level, and show stats

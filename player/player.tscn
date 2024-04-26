@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://w6o3nuravyu0"]
+[gd_scene load_steps=12 format=3 uid="uid://w6o3nuravyu0"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_w2ldp"]
 [ext_resource type="PackedScene" uid="uid://b6rl1arfg0pgp" path="res://pickups/guns/frostbringer.tscn" id="2_7w37v"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bte3divjcbten" path="res://pickups/guns/ak_47.tscn" id="5_awxkp"]
 [ext_resource type="PackedScene" uid="uid://bk6doy1wshgyh" path="res://pickups/guns/watergun.tscn" id="6_n4x77"]
 [ext_resource type="PackedScene" uid="uid://djwgpctfwxm1g" path="res://pickups/guns/bazooka.tscn" id="7_qfg0c"]
+[ext_resource type="AudioStream" uid="uid://8l88y10bklo6" path="res://audio/player_hit.mp3" id="8_oi8a4"]
+[ext_resource type="AudioStream" uid="uid://dtrrgsl1mqq1f" path="res://audio/maxammo_pickup.mp3" id="9_bc5kt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ngj4o"]
 
@@ -149,3 +151,9 @@ freeze = true
 light_energy = 5.04
 spot_range = 9.0
 spot_angle = 52.0312
+
+[node name="hit_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_oi8a4")
+
+[node name="powerup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bc5kt")

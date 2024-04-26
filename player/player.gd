@@ -22,6 +22,9 @@ class_name Player
 @onready var shot_spread = [shoot_ray, shoot_ray2, shoot_ray3, shoot_ray4, shoot_ray5, shoot_ray6, shoot_ray7]
 @onready var shot_trails = [shoot_ray_end, shoot_ray2_end, shoot_ray3_end, shoot_ray4_end, shoot_ray5_end, shoot_ray6_end, shoot_ray7_end]
 
+@onready var hit_sound = $hit_sound
+@onready var powerup_sound = $powerup_sound
+
 const SPEED = 6.5
 const JUMP_VELOCITY = 3
 
@@ -37,6 +40,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	connect("max_collected",pickup_powerup)
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -134,6 +138,7 @@ func handle_interaction():
 		interact_ray.get_collider().interact()
 
 func hit(damage):
+	hit_sound.play()
 	PlayerCharacteristics.current_health -= damage
 	emit_signal("player_hit")
 
@@ -141,3 +146,6 @@ func handle_death():
 	#tell level that the player is dead
 	emit_signal("player_dead")
 	
+
+func pickup_powerup():
+	powerup_sound.play()

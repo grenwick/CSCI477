@@ -26,6 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000878036, 0.210009, 0.0224
 
 [node name="gunshot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hset8")
+volume_db = 3.952
 
 [node name="reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_okj10")

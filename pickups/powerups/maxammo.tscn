@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ycv88irflla"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ycv88irflla"]
 
 [ext_resource type="Script" path="res://pickups/powerups/maxammo.gd" id="1_g34s5"]
 [ext_resource type="ArrayMesh" uid="uid://dfjwnfab0vphv" path="res://pixel_sprites/object_sprites/powerups/maxammo.obj" id="1_jxhms"]
+[ext_resource type="AudioStream" uid="uid://dtrrgsl1mqq1f" path="res://audio/maxammo_pickup.mp3" id="3_ayq1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6l16"]
 size = Vector3(1.33258, 0.756592, 0.669189)
@@ -26,5 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20948, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0701294, 0, -0.0239868)
 shape = SubResource("BoxShape3D_qdrqc")
+
+[node name="maxammo_pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ayq1m")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
