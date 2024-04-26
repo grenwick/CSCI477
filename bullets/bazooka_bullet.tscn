@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b85ejnuxwootu"]
+
+[ext_resource type="Script" path="res://bullets/bazooka_bullet.gd" id="1_bm3kv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3e0w"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okxdy"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0.380392, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v33ag"]
+size = Vector3(0.176758, 0.137909, 1.0481)
+
+[node name="BazookaBullet" type="Node3D"]
+script = ExtResource("1_bm3kv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_g3e0w")
+surface_material_override/0 = SubResource("StandardMaterial3D_okxdy")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488, 0.000136346, -0.00256348)
+shape = SubResource("BoxShape3D_v33ag")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

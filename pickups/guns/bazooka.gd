@@ -2,18 +2,18 @@ extends Gun
 
 const icon = "res://pixel_sprites/ui/item_icons/bazooka_icon.png"
 
-var bullet = load("res://bullets/revolver_bullet.tscn")
+var bullet = load("res://bullets/bazooka_bullet.tscn")
 var bullet_instance
 
-var WEAPON_DAMAGE = 125
+var WEAPON_DAMAGE = 44000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gun_name = "Bazooka"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
-	magazine_size = 8
-	reserves_size = 32
+	magazine_size = 1
+	reserves_size = 15
 	current_magazine = magazine_size
 	current_reserves = reserves_size
 

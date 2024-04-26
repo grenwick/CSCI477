@@ -6,6 +6,7 @@ class_name Gun extends Pickable
 
 var bullet_trail = preload("res://bullets/bullet_trail.tscn")
 var instance
+var gunshot
 
 var magazine_size
 var reserves_size
