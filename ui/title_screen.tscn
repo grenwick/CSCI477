@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt7xsqycj10ch"]
+[gd_scene load_steps=9 format=3 uid="uid://dt7xsqycj10ch"]
 
 [ext_resource type="Texture2D" uid="uid://ddkavm7iy5s1b" path="res://textures/MenuElements/title_screen_pixels.png" id="1_gp6dr"]
 [ext_resource type="Script" path="res://ui/title_screen.gd" id="1_laxpk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://clj18b720ecrn" path="res://pixel_sprites/ui/play_button.png" id="3_eguou"]
 [ext_resource type="Texture2D" uid="uid://bokdm0np3mxg3" path="res://pixel_sprites/ui/quit_button.png" id="4_ptqme"]
 [ext_resource type="Texture2D" uid="uid://dfq0xw45i74rm" path="res://pixel_sprites/ui/settings.png" id="5_gfgt0"]
+[ext_resource type="AudioStream" uid="uid://b4ixvng4ud1lo" path="res://audio/title_screen_music.mp3" id="7_4f8f2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ntesa"]
 
@@ -53,6 +54,9 @@ offset_bottom = 484.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ntesa")
 icon = ExtResource("4_ptqme")
 expand_icon = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4f8f2")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

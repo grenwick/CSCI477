@@ -3,6 +3,7 @@ extends Gun
 const icon = "res://pixel_sprites/ui/item_icons/frostbringer_icon.png"
 
 var WEAPON_DAMAGE = 150
+var play_charge_sound = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,11 +30,16 @@ func shoot(shot_spread, shot_trails, gun_barrel):
 	#handle the charge mechanic
 	var charge_time = 0
 	while Input.is_action_pressed("primary action"):
+		#only play sound once for full charge
+		if play_charge_sound == true:
+			gunshot_sound.play()
+			play_charge_sound = false
 		if charge_time > .74:
 			break
 		await get_tree().create_timer(.01).timeout
-		gunshot_sound.play()
 		if Input.is_action_just_released("primary action"):
+			gunshot_sound.stop()
+			play_charge_sound = true
 			return
 		else:
 			charge_time += .0175
@@ -59,3 +65,5 @@ func shoot(shot_spread, shot_trails, gun_barrel):
 			
 		increment += 1
 		await get_tree().create_timer(.001).timeout
+	#reset sound cue
+	play_charge_sound = true

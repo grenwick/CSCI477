@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://pickups/guns/frostbringer.gd" id="1_ay6h7"]
 [ext_resource type="Texture2D" uid="uid://duileqid7vqts" path="res://pixel_sprites/object_sprites/guns/frostbringer.png" id="2_h2ux3"]
 [ext_resource type="ArrayMesh" uid="uid://dyid1mn1vfyny" path="res://pixel_sprites/object_sprites/guns/frostbringer.obj" id="3_2g1p0"]
-[ext_resource type="AudioStream" uid="uid://dpjfrooe5yxur" path="res://audio/deliverance_shot.mp3" id="4_ukgjy"]
+[ext_resource type="AudioStream" uid="uid://cfllwht878vuk" path="res://audio/deliverance_shot.mp3" id="4_ukgjy"]
 [ext_resource type="AudioStream" uid="uid://bn4pjwlstiufi" path="res://audio/deliverance_reload.mp3" id="5_sigad"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqwsh"]

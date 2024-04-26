@@ -28,8 +28,13 @@ func _process(_delta):
 func shoot(shot_spread, _shot_trails, gun_barrel):
 	if !can_shoot():
 		return
+	gunshot_sound.play()
+	#if Input.is_action_just_released("primary action"):
+			#gunshot_sound.stop()
+			#return
 	while Input.is_action_pressed("primary action"):
 		if !can_shoot():
+			gunshot_sound.stop()
 			return
 		remove_ammo(1)
 		bullet_instance = bullet.instantiate()
@@ -39,3 +44,4 @@ func shoot(shot_spread, _shot_trails, gun_barrel):
 				
 		get_parent().add_child(bullet_instance)
 		await get_tree().create_timer(.15).timeout
+	gunshot_sound.stop()

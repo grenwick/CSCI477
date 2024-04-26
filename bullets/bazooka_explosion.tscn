@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs6y5gngvabfg"]
 
-[ext_resource type="Script" path="res://BazookaExplosion.gd" id="1_ie7qb"]
+[ext_resource type="Script" path="res://bullets/BazookaExplosion.gd" id="1_okc26"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_kmt3j"]
 
@@ -8,7 +8,7 @@
 radius = 2.08074
 
 [node name="BazookaExplosion" type="Node3D"]
-script = ExtResource("1_ie7qb")
+script = ExtResource("1_okc26")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

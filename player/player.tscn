@@ -115,7 +115,6 @@ collision_layer = 128
 collision_mask = 0
 gravity_scale = 0.0
 freeze = true
-gun_name = ""
 
 [node name="Lyre" parent="Camera3D/Gun" instance=ExtResource("4_ppefy")]
 transform = Transform3D(0.230768, -0.053277, -0.971549, 0.224951, 0.97437, 0, 0.946648, -0.218551, 0.236838, 0.3, -0.6, -0.348)

@@ -1,12 +1,13 @@
 extends Node2D
 
+@onready var music = $music
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var playButton = $PlayButton
 	var popup = playButton.get_popup()
 	popup.id_pressed.connect(play_level_select)
-
+	music.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

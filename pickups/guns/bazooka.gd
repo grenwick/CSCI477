@@ -27,7 +27,6 @@ func _process(_delta):
 func shoot(shot_spread, _shot_trails, gun_barrel):
 	if !can_shoot():
 		return
-	
 	remove_ammo(1)
 	bullet_instance = bullet.instantiate()
 	bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
