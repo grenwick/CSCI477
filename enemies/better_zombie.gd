@@ -1,7 +1,12 @@
 extends Enemy
 
 var player = null
+var level = null
 var state_machine
+var dead = false
+
+
+var max_ammo = preload("res://pickups/powerups/maxammo.tscn")
 
 const SPEED = 3.25
 
@@ -12,6 +17,7 @@ const HIT_VALUE = 10
 const DEATH_VALUE = 50
 
 @export var player_path := "/root/Level/Player"
+@export var level_path := "/root/Level"
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
@@ -20,6 +26,7 @@ func _ready():
 	set_physics_process(false)
 	current_health = GameCharacteristics.zombie_health
 	player = get_node(player_path)
+	level = get_node(level_path)
 	state_machine = anim_tree.get("parameters/playback")
 	
 func _process(_delta):
@@ -48,6 +55,12 @@ func _process(_delta):
 			#look at player
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 		"die":
+			if dead == false:
+				if randi() % 20 == 0:
+					var lootbox = max_ammo.instantiate()
+					lootbox.position = position
+					level.add_child(lootbox)
+				dead = true
 			#if hp < 0, wait a few seconds and despawn zombie
 			disable_collisions()
 			await get_tree().create_timer(3.5).timeout
