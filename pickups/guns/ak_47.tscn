@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bte3divjcbten"]
+[gd_scene load_steps=6 format=3 uid="uid://bte3divjcbten"]
 
 [ext_resource type="ArrayMesh" uid="uid://cndjubuxm4gyl" path="res://pixel_sprites/object_sprites/guns/AK47Model.obj" id="1_fyypt"]
 [ext_resource type="Script" path="res://pickups/guns/ak_47.gd" id="1_nlryb"]
+[ext_resource type="AudioStream" uid="uid://bainmma48hedo" path="res://audio/ak47_gunshot.mp3" id="3_ct37i"]
+[ext_resource type="AudioStream" uid="uid://c4j37b6nrroex" path="res://audio/bullet_reload.mp3" id="4_gkpmt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oaah6"]
 size = Vector3(2.16478, 0.668518, 0.282898)
@@ -20,3 +22,10 @@ shape = SubResource("BoxShape3D_oaah6")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.826844, 0.589574, 0.0181239)
+
+[node name="gunshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ct37i")
+volume_db = -11.856
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gkpmt")

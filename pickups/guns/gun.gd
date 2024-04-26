@@ -6,7 +6,8 @@ class_name Gun extends Pickable
 
 var bullet_trail = preload("res://bullets/bullet_trail.tscn")
 var instance
-var gunshot
+var gunshot_sound
+var reload_sound
 
 var magazine_size
 var reserves_size
@@ -35,6 +36,7 @@ func remove_ammo(shots_fired):
 	current_magazine -= shots_fired
 
 func reload(reload_speed, reload_multiplier):
+	reload_sound.play()
 	var rounds_to_reload = magazine_size - current_magazine
 	if rounds_to_reload > current_reserves :
 		rounds_to_reload = current_reserves

@@ -10,6 +10,8 @@ var WEAPON_DAMAGE = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	gunshot_sound = $gunshot
+	reload_sound = $reload
 	gun_name = "Lyre"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
@@ -26,7 +28,6 @@ func _process(_delta):
 func shoot(shot_spread, _shot_trails, gun_barrel):
 	if !can_shoot():
 		return
-		
 	while Input.is_action_pressed("primary action"):
 		if !can_shoot():
 			return

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx4ltgm8uw1k8"]
+[gd_scene load_steps=6 format=3 uid="uid://bx4ltgm8uw1k8"]
 
 [ext_resource type="Script" path="res://pickups/guns/lyre.gd" id="1_87kji"]
 [ext_resource type="ArrayMesh" uid="uid://dwysuoauontea" path="res://pixel_sprites/object_sprites/guns/lyre.obj" id="2_82ta0"]
+[ext_resource type="AudioStream" uid="uid://cmtvep6mhrjab" path="res://audio/harp_shot.mp3" id="3_hset8"]
+[ext_resource type="AudioStream" uid="uid://brwfmy2g0hpy7" path="res://audio/harp_reload.mp3" id="4_okj10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e30vh"]
 size = Vector3(0.602112, 0.591797, 0.140991)
@@ -21,3 +23,9 @@ shape = SubResource("BoxShape3D_e30vh")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000878036, 0.210009, 0.0224954)
+
+[node name="gunshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hset8")
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_okj10")

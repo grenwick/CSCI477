@@ -8,6 +8,8 @@ var WEAPON_DAMAGE = 150
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gun_name = "Frostbringer"
+	gunshot_sound = $gunshot
+	reload_sound = $reload
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
 	magazine_size = 6
@@ -30,6 +32,7 @@ func shoot(shot_spread, shot_trails, gun_barrel):
 		if charge_time > .74:
 			break
 		await get_tree().create_timer(.01).timeout
+		gunshot_sound.play()
 		if Input.is_action_just_released("primary action"):
 			return
 		else:

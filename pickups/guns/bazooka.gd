@@ -9,6 +9,8 @@ var WEAPON_DAMAGE = 44000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	gunshot_sound = $gunshot
+	reload_sound = $reload
 	gun_name = "Bazooka"
 	gun_barrel = $Node3D
 	bullethole = load("res://bullets/bullethole.tscn")
@@ -31,6 +33,7 @@ func shoot(shot_spread, _shot_trails, gun_barrel):
 	bullet_instance.WEAPON_DAMAGE = WEAPON_DAMAGE
 	bullet_instance.position = gun_barrel.global_position
 	bullet_instance.transform.basis = shot_spread[0].global_transform.basis
+	gunshot_sound.play()
 	if shot_spread[0].is_colliding():
 		if !shot_spread[0].get_collider().is_in_group("enemy"):
 			var hole_instance = bullethole.instantiate() as Node3D

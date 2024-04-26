@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djwgpctfwxm1g"]
+[gd_scene load_steps=6 format=3 uid="uid://djwgpctfwxm1g"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8um50dbjxcow" path="res://pixel_sprites/object_sprites/guns/Bazooka.obj" id="1_5qvpf"]
 [ext_resource type="Script" path="res://pickups/guns/bazooka.gd" id="2_md722"]
+[ext_resource type="AudioStream" uid="uid://g1bwuovddxof" path="res://audio/rocket_shot.mp3" id="3_taksm"]
+[ext_resource type="AudioStream" uid="uid://b53mu2tar1fnh" path="res://audio/rocket_reload.mp3" id="4_55dg0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3hqrh"]
 size = Vector3(0.425049, 0.608337, 1.91309)
@@ -20,3 +22,9 @@ shape = SubResource("BoxShape3D_3hqrh")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0942918, 2.38746, -1.84035)
+
+[node name="gunshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_taksm")
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_55dg0")

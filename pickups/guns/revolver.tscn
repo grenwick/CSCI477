@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfoscphlq5pqx"]
+[gd_scene load_steps=6 format=3 uid="uid://bfoscphlq5pqx"]
 
 [ext_resource type="ArrayMesh" uid="uid://6pxqvaxxcxbx" path="res://pixel_sprites/object_sprites/guns/revolver.obj" id="1_6q85p"]
 [ext_resource type="Script" path="res://pickups/guns/revolver.gd" id="1_bbgga"]
 [ext_resource type="AudioStream" uid="uid://bltrakcel8l81" path="res://audio/pistol_gunshot.mp3" id="3_xcgnw"]
+[ext_resource type="AudioStream" uid="uid://c4j37b6nrroex" path="res://audio/bullet_reload.mp3" id="4_ggnhj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_33y36"]
 size = Vector3(0.809082, 0.442383, 0.256592)
@@ -10,7 +11,6 @@ size = Vector3(0.809082, 0.442383, 0.256592)
 [node name="Revolver" type="RigidBody3D"]
 collision_layer = 2
 script = ExtResource("1_bbgga")
-gun_name = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -26,3 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.312002, 0.315535, 0)
 [node name="gunshot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xcgnw")
 volume_db = -5.2
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ggnhj")
