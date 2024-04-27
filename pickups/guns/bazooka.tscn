@@ -9,7 +9,7 @@
 size = Vector3(0.425049, 0.608337, 1.91309)
 
 [node name="Bazooka" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107346, 0.0916339, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.107346, 0.0916339, 0)
 script = ExtResource("2_md722")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

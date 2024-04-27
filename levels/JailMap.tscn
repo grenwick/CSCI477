@@ -2075,7 +2075,7 @@ visible = false
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -19.5788, 0.505139, -6.75176)
 
 [node name="MysteryBox2" parent="." instance=ExtResource("18_kinbx")]
-transform = Transform3D(-1.44248e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.44248e-08, -23.37, 10.9895, 5.6859)
+transform = Transform3D(-0.33, 0, -2.88495e-08, 0, 0.33, 0, 2.88495e-08, 0, -0.33, -17.7716, 10.9895, 16.3491)
 
 [node name="GunUpgrader" parent="." instance=ExtResource("16_8bho1")]
 transform = Transform3D(-1.44248e-08, 0, -0.33, 0, 0.33, 0, 0.33, 0, -1.44248e-08, -24.3926, -9.01166, -5.29065)

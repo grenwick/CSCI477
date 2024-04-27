@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs6y5gngvabfg"]
+[gd_scene load_steps=5 format=3 uid="uid://bs6y5gngvabfg"]
 
 [ext_resource type="Script" path="res://bullets/BazookaExplosion.gd" id="1_okc26"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsgye"]
+transparency = 1
+albedo_color = Color(0.670588, 0.141176, 0.152941, 0.596078)
+
 [sub_resource type="SphereMesh" id="SphereMesh_kmt3j"]
+material = SubResource("StandardMaterial3D_rsgye")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_phrbi"]
 radius = 2.08074

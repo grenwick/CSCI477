@@ -21,6 +21,7 @@ func _ready():
 	randomize()
 	weapons = [lyre, frostbringer, ak47, watergun, bazooka]
 	var starting_gun = revolver.instantiate()
+	starting_gun.position = Vector3(1000,1000,1000)
 	add_child(starting_gun)
 	#spaghetti ass code
 	$Player/Camera3D/Gun/Revolver.visible = true

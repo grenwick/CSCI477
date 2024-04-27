@@ -109,3 +109,10 @@ func disable_collisions():
 	$Armature/Skeleton3D/RightHand/Area3D/CollisionShape3D.disabled = true
 	$Armature/Skeleton3D/LeftHand/Area3D/CollisionShape3D.disabled = true
 	$CollisionShape3D.disabled = true
+
+func hit(damage):
+	hit_sound.play()
+	current_health = 0
+	GameCharacteristics.current_score += HIT_VALUE
+	GameCharacteristics.total_score += HIT_VALUE
+	
