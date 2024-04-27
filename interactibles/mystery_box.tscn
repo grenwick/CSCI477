@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://djp702y81levi"]
+[gd_scene load_steps=5 format=3 uid="uid://djp702y81levi"]
 
 [ext_resource type="Script" path="res://interactibles/mystery_box.gd" id="1_3lnhd"]
 [ext_resource type="ArrayMesh" uid="uid://vjnghli5i7tb" path="res://pixel_sprites/object_sprites/non_weapons/large_wooden_box.obj" id="1_juaoa"]
+[ext_resource type="AudioStream" uid="uid://wdaubjhil1yo" path="res://audio/random_weapon_box_open.mp3" id="3_jdmfs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wqnw4"]
 size = Vector3(10.031, 3.73584, 3.85736)
@@ -16,3 +17,6 @@ mesh = ExtResource("1_juaoa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36792, -0.00784302)
 shape = SubResource("BoxShape3D_wqnw4")
+
+[node name="open_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jdmfs")

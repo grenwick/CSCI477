@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf4y4x4grj625"]
+[gd_scene load_steps=5 format=3 uid="uid://bf4y4x4grj625"]
 
 [ext_resource type="Script" path="res://interactibles/gun_upgrader.gd" id="1_8yfyc"]
 [ext_resource type="ArrayMesh" uid="uid://che6eb1dd1mgu" path="res://pixel_sprites/object_sprites/non_weapons/gun_upgrader.obj" id="1_v60ci"]
+[ext_resource type="AudioStream" uid="uid://cc1c68v75c5pl" path="res://audio/gun_upgrade.mp3" id="3_kkrou"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp6tp"]
 size = Vector3(9.63867, 5.81628, 4.23761)
@@ -16,3 +17,6 @@ mesh = ExtResource("1_v60ci")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40814, 0.0639343)
 shape = SubResource("BoxShape3D_dp6tp")
+
+[node name="upgrade_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kkrou")

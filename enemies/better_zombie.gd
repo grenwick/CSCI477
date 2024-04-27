@@ -61,7 +61,7 @@ func _process(_delta):
 				zombie_growl.play()
 		"die":
 			if dead == false:
-				if randi() % 1 == 0:
+				if randi() % 100 == 0:
 					var lootbox = max_ammo.instantiate()
 					lootbox.position = position
 					level.add_child(lootbox)

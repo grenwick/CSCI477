@@ -2,7 +2,7 @@ extends Interactible
 
 signal upgrade_weapon
 
-
+@onready var upgrade_audio = $upgrade_audio
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,13 +21,16 @@ func interact():
 					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l1:
 						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l1
 						emit_signal("upgrade_weapon")
+						upgrade_audio.play()
 				1:
 					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l2:
 						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l2
 						emit_signal("upgrade_weapon")
+						upgrade_audio.play()
 				2:
 					if GameCharacteristics.current_score >= GameCharacteristics.upgrade_cost_l3:
 						GameCharacteristics.current_score -= GameCharacteristics.upgrade_cost_l3
 						emit_signal("upgrade_weapon")
+						upgrade_audio.play()
 				_:
 					pass

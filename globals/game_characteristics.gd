@@ -1,9 +1,12 @@
 extends Node
 
 const DEFAULT_ROUND = 1
-const DEFAULT_SCORE = 50000
+const DEFAULT_SCORE = 500
 const DEFAULT_ZOMBIE_HEALTH = 150
 const DEFAULT_MAX_ZOMBIES_IN_ROUND = 6
+
+var round_change_sound = preload("res://audio/round_change.mp3")
+var audio_player = AudioStreamPlayer.new()
 
 var current_round
 var current_score
@@ -24,6 +27,8 @@ var upgrade_cost_l3 = 25000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(audio_player)
+	audio_player.stream = round_change_sound
 	current_round = DEFAULT_ROUND
 	current_score = DEFAULT_SCORE
 	zombie_health = DEFAULT_ZOMBIE_HEALTH
@@ -62,6 +67,7 @@ func update_zombies_per_round():
 	
 func check_round_completed():
 	if killed_zombies_in_round >= max_zombies_in_round:
+		audio_player.play()
 		current_round += 1
 		update_zombie_health()
 		update_zombies_per_round()
