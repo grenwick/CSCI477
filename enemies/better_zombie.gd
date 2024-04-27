@@ -4,6 +4,7 @@ var player = null
 var level = null
 var state_machine
 var dead = false
+var dead2 = false
 
 
 var max_ammo = preload("res://pickups/powerups/maxammo.tscn")
@@ -35,13 +36,14 @@ func _process(_delta):
 	velocity = Vector3.ZERO
 	
 	#check if the enemy is alive
-	if !check_live():
+	if !check_live() and dead2 == false:
 		GameCharacteristics.kills += 1
 		GameCharacteristics.killed_zombies_in_round += 1
 		GameCharacteristics.current_score += DEATH_VALUE
 		GameCharacteristics.total_score += DEATH_VALUE
 		GameCharacteristics.check_round_completed()
 		anim_tree.set("parameters/conditions/dead", true)
+		dead2 = true
 		
 	
 	match state_machine.get_current_node():
@@ -110,7 +112,7 @@ func disable_collisions():
 	$Armature/Skeleton3D/LeftHand/Area3D/CollisionShape3D.disabled = true
 	$CollisionShape3D.disabled = true
 
-func hit(damage):
+func kill(damage):
 	hit_sound.play()
 	current_health = 0
 	GameCharacteristics.current_score += HIT_VALUE
